@@ -166,6 +166,8 @@
                     <connections>
                         <outlet property="accountImageVIew" destination="Ix8-h8-kKS" id="frc-yM-jVN"/>
                         <outlet property="accountTableView" destination="BL3-BF-Uzh" id="Z7d-wL-W1b"/>
+                        <outlet property="joinButton" destination="uI3-En-g1b" id="Kb9-Vt-7ZX"/>
+                        <outlet property="signInButton" destination="6nw-Lr-SjG" id="JzV-1T-fCR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rga-mZ-TOF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

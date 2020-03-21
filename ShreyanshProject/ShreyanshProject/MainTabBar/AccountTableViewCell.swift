@@ -12,6 +12,8 @@ class AccountTableViewCell: UITableViewCell {
 
     @IBOutlet weak var accountCellLabel: UILabel!
     @IBOutlet weak var accountCellImageView: UIImageView!
+    @IBOutlet weak var extraLabel: UILabel!
+    @IBOutlet weak var extraImageView: UIImageView!
     
     
     override func awakeFromNib() {
@@ -36,5 +38,16 @@ class AccountTableViewCell: UITableViewCell {
         
         accountCellImageView.image = image
     }
+    
+    func setExtraImage(image: UIImage) {
+        
+        extraImageView.image = image
+    }
+    
+    func setExtraLabel(text: String) {
+        
+        extraLabel.text = text
+    }
+    
     
 }

@@ -12,6 +12,8 @@ class AccountViewController: UIViewController {
 
     @IBOutlet weak var accountTableView: UITableView!
     @IBOutlet weak var accountImageVIew: UIImageView!
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var joinButton: UIButton!
     
     
     //make nested array of stringn type
@@ -21,6 +23,10 @@ class AccountViewController: UIViewController {
        2. Use "Image Literal" to store the image which is available in Assets file  */
     
     let imageArray = [ [#imageLiteral(resourceName: "TrackOrder"), #imageLiteral(resourceName: "SizeChart"), #imageLiteral(resourceName: "Notifications"), #imageLiteral(resourceName: "StoreLocator")], [ #imageLiteral(resourceName: "Country"), #imageLiteral(resourceName: "Language"), #imageLiteral(resourceName: "AboutUs"), #imageLiteral(resourceName: "FAQ"), #imageLiteral(resourceName: "ShippingAndReturn")] ]
+    
+    let flagImage: UIImage = #imageLiteral(resourceName: "IndiaFlag")
+    let countryName = "IND"
+    let languageName = "ENG"
     
         
     override func viewDidLoad() {
@@ -37,6 +43,7 @@ class AccountViewController: UIViewController {
         //remove the extra empty cell of tableview
         accountTableView.tableFooterView = UIView()
         
+        
         let nib = UINib(nibName: "AccountTableViewCell", bundle: nil)
         accountTableView.register(nib, forCellReuseIdentifier: "AccountTableCell")
         
@@ -47,6 +54,8 @@ class AccountViewController: UIViewController {
         accountImageVIew.addGestureRecognizer(singleTap)
 
     }
+    
+    
     
     //MARK: Toast Function
     
@@ -125,6 +134,15 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         cell.setValueToLabel(text: labelArray[indexPath.section][indexPath.row])
         cell.setImage(image: imageArray[indexPath.section][indexPath.row])
         
+        if indexPath.section == 1 && indexPath.row == 0 {
+            cell.setExtraImage(image: flagImage)
+            cell.setExtraLabel(text: countryName)
+        }
+        
+        if indexPath.section == 1 && indexPath.row == 1 {
+            cell.setExtraLabel(text: languageName)
+        }
+        
         return cell
     }
     
@@ -201,3 +219,5 @@ extension AccountViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
 }
+
+
