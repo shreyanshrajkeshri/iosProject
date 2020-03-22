@@ -97,51 +97,64 @@
                                             <constraint firstAttribute="height" constant="100" id="ha8-JE-JvQ"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="TJG-ww-uxk">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tc-J1-sBk" userLabel="ContentViewOfStackView">
                                         <rect key="frame" x="54" y="86.5" width="140" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nw-Lr-SjG">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
-                                                <color key="backgroundColor" red="0.96848052740000001" green="0.96279686099999995" blue="0.63758361109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="SIGN IN">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="signInButtonAction:" destination="6iQ-O3-Veq" eventType="touchUpInside" id="BUg-dB-PSz"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15Y-dT-MLs">
-                                                <rect key="frame" x="80" y="0.0" width="10" height="30"/>
-                                                <color key="backgroundColor" red="0.96848052740000001" green="0.96279686099999995" blue="0.63758361109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-En-g1b">
-                                                <rect key="frame" x="90" y="0.0" width="50" height="30"/>
-                                                <color key="backgroundColor" red="0.96848052740000001" green="0.96279686099999995" blue="0.63758361109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="JOIN">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="joinButtonAction:" destination="6iQ-O3-Veq" eventType="touchUpInside" id="nIK-pM-HlL"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="TJG-ww-uxk">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nw-Lr-SjG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="30"/>
+                                                        <state key="normal" title="SIGN IN">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="signInButtonAction:" destination="6iQ-O3-Veq" eventType="touchUpInside" id="BUg-dB-PSz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15Y-dT-MLs">
+                                                        <rect key="frame" x="76.5" y="0.0" width="10" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-En-g1b">
+                                                        <rect key="frame" x="86.5" y="0.0" width="53.5" height="30"/>
+                                                        <state key="normal" title="JOIN ">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="joinButtonAction:" destination="6iQ-O3-Veq" eventType="touchUpInside" id="nIK-pM-HlL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.96848052740000001" green="0.96279686099999995" blue="0.63758361109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="Sco-Ut-yxq"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="euH-vg-jpd"/>
+                                            <constraint firstAttribute="trailing" secondItem="TJG-ww-uxk" secondAttribute="trailing" id="39a-00-wnt"/>
+                                            <constraint firstAttribute="width" constant="140" id="A4a-rl-acU"/>
+                                            <constraint firstItem="TJG-ww-uxk" firstAttribute="leading" secondItem="5tc-J1-sBk" secondAttribute="leading" id="Cpa-2d-o1X"/>
+                                            <constraint firstAttribute="bottom" secondItem="TJG-ww-uxk" secondAttribute="bottom" id="bDU-oP-9S0"/>
+                                            <constraint firstItem="TJG-ww-uxk" firstAttribute="top" secondItem="5tc-J1-sBk" secondAttribute="top" id="gqN-nE-to3"/>
+                                            <constraint firstAttribute="height" constant="30" id="nwo-M9-Jlp"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y80-ON-tM0">
+                                        <rect key="frame" x="173" y="11" width="97" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="TJG-ww-uxk" firstAttribute="centerY" secondItem="z80-iT-Tq5" secondAttribute="centerY" multiplier="1.4" id="9zo-mC-COH"/>
-                                    <constraint firstItem="TJG-ww-uxk" firstAttribute="centerX" secondItem="z80-iT-Tq5" secondAttribute="centerX" multiplier="0.6" id="Njw-A9-Nb0"/>
                                     <constraint firstItem="Ix8-h8-kKS" firstAttribute="centerY" secondItem="z80-iT-Tq5" secondAttribute="centerY" id="PlB-Ot-2Cc"/>
+                                    <constraint firstItem="5tc-J1-sBk" firstAttribute="centerX" secondItem="z80-iT-Tq5" secondAttribute="centerX" multiplier="0.6" id="YrX-rf-bXK"/>
                                     <constraint firstItem="Ix8-h8-kKS" firstAttribute="centerX" secondItem="z80-iT-Tq5" secondAttribute="centerX" multiplier="1.6" id="dQX-l0-quf"/>
                                     <constraint firstItem="25c-4p-Y2v" firstAttribute="centerY" secondItem="z80-iT-Tq5" secondAttribute="centerY" multiplier="0.8" id="eDQ-eB-wur"/>
                                     <constraint firstItem="25c-4p-Y2v" firstAttribute="centerX" secondItem="z80-iT-Tq5" secondAttribute="centerX" multiplier="0.5" id="r4w-3w-mDN"/>
+                                    <constraint firstItem="5tc-J1-sBk" firstAttribute="centerY" secondItem="z80-iT-Tq5" secondAttribute="centerY" multiplier="1.4" id="zod-7e-mUy"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BL3-BF-Uzh">
@@ -166,13 +179,15 @@
                     <connections>
                         <outlet property="accountImageVIew" destination="Ix8-h8-kKS" id="frc-yM-jVN"/>
                         <outlet property="accountTableView" destination="BL3-BF-Uzh" id="Z7d-wL-W1b"/>
+                        <outlet property="contentViewOfStackView" destination="5tc-J1-sBk" id="H6L-r0-nBV"/>
+                        <outlet property="demoTextField" destination="Y80-ON-tM0" id="sRh-ty-yBr"/>
                         <outlet property="joinButton" destination="uI3-En-g1b" id="Kb9-Vt-7ZX"/>
                         <outlet property="signInButton" destination="6nw-Lr-SjG" id="JzV-1T-fCR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rga-mZ-TOF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3690" y="1851"/>
+            <point key="canvasLocation" x="3689.8550724637685" y="1850.8928571428571"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="reg-dG-0uI">

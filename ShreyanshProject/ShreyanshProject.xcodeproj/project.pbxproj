@@ -17,6 +17,10 @@
 		E15325BA2424ABC1004756DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E15325B82424ABC1004756DC /* LaunchScreen.storyboard */; };
 		E15325C52424ABC1004756DC /* ShreyanshProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325C42424ABC1004756DC /* ShreyanshProjectTests.swift */; };
 		E15325D02424ABC1004756DC /* ShreyanshProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325CF2424ABC1004756DC /* ShreyanshProjectUITests.swift */; };
+		E17EDB6B24274AAC00310BC0 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17EDB6924274AAC00310BC0 /* CountryTableViewCell.swift */; };
+		E17EDB6C24274AAC00310BC0 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17EDB6A24274AAC00310BC0 /* CountryTableViewCell.xib */; };
+		E17EDB6F24274C8E00310BC0 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17EDB6D24274C8E00310BC0 /* LanguageTableViewCell.swift */; };
+		E17EDB7024274C8E00310BC0 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17EDB6E24274C8E00310BC0 /* LanguageTableViewCell.xib */; };
 		E19640062424B0C7009F50C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19640052424B0C7009F50C3 /* HomeViewController.swift */; };
 		E19640082424B0D3009F50C3 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19640072424B0D3009F50C3 /* AccountViewController.swift */; };
 		E196400A2424B0E5009F50C3 /* MyCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19640092424B0E5009F50C3 /* MyCartViewController.swift */; };
@@ -61,6 +65,10 @@
 		E15325CB2424ABC1004756DC /* ShreyanshProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShreyanshProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15325CF2424ABC1004756DC /* ShreyanshProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShreyanshProjectUITests.swift; sourceTree = "<group>"; };
 		E15325D12424ABC1004756DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E17EDB6924274AAC00310BC0 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		E17EDB6A24274AAC00310BC0 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		E17EDB6D24274C8E00310BC0 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
+		E17EDB6E24274C8E00310BC0 /* LanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageTableViewCell.xib; sourceTree = "<group>"; };
 		E19640052424B0C7009F50C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E19640072424B0D3009F50C3 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E19640092424B0E5009F50C3 /* MyCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 				E196400F2424B111009F50C3 /* MainTabBar */,
 				E1291D58242548A6006112E6 /* RegistrationViewController.swift */,
 				E1291D5A242548B4006112E6 /* LoginViewController.swift */,
+				E17EDB6824274A6700310BC0 /* TableViewCell */,
 			);
 			path = ShreyanshProject;
 			sourceTree = "<group>";
@@ -151,6 +160,19 @@
 			path = ShreyanshProjectUITests;
 			sourceTree = "<group>";
 		};
+		E17EDB6824274A6700310BC0 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E19640122424E7BF009F50C3 /* AccountTableViewCell.swift */,
+				E19640132424E7BF009F50C3 /* AccountTableViewCell.xib */,
+				E17EDB6924274AAC00310BC0 /* CountryTableViewCell.swift */,
+				E17EDB6A24274AAC00310BC0 /* CountryTableViewCell.xib */,
+				E17EDB6D24274C8E00310BC0 /* LanguageTableViewCell.swift */,
+				E17EDB6E24274C8E00310BC0 /* LanguageTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		E196400F2424B111009F50C3 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +182,6 @@
 				E196400B2424B0F3009F50C3 /* WishlistViewController.swift */,
 				E196400D2424B104009F50C3 /* CategoriesViewController.swift */,
 				E19640102424B1A2009F50C3 /* MainTabBarController.swift */,
-				E19640122424E7BF009F50C3 /* AccountTableViewCell.swift */,
-				E19640132424E7BF009F50C3 /* AccountTableViewCell.xib */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -274,6 +294,8 @@
 				E19640152424E7BF009F50C3 /* AccountTableViewCell.xib in Resources */,
 				E15325B72424ABC1004756DC /* Assets.xcassets in Resources */,
 				E15325B52424ABBF004756DC /* Main.storyboard in Resources */,
+				E17EDB6C24274AAC00310BC0 /* CountryTableViewCell.xib in Resources */,
+				E17EDB7024274C8E00310BC0 /* LanguageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,10 +328,12 @@
 				E19640142424E7BF009F50C3 /* AccountTableViewCell.swift in Sources */,
 				E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */,
 				E196400C2424B0F3009F50C3 /* WishlistViewController.swift in Sources */,
+				E17EDB6B24274AAC00310BC0 /* CountryTableViewCell.swift in Sources */,
 				E15325B02424ABBF004756DC /* SceneDelegate.swift in Sources */,
 				E196400A2424B0E5009F50C3 /* MyCartViewController.swift in Sources */,
 				E196400E2424B104009F50C3 /* CategoriesViewController.swift in Sources */,
 				E19640062424B0C7009F50C3 /* HomeViewController.swift in Sources */,
+				E17EDB6F24274C8E00310BC0 /* LanguageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

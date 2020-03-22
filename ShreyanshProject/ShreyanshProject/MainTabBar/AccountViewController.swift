@@ -14,7 +14,9 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var accountImageVIew: UIImageView!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var contentViewOfStackView: UIView!
     
+    @IBOutlet weak var demoTextField: UITextField!
     
     //make nested array of stringn type
     let labelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Shipping & Returns"] ]
@@ -28,6 +30,11 @@ class AccountViewController: UIViewController {
     let countryName = "IND"
     let languageName = "ENG"
     
+    let countryNameArray = ["BTN", "IND", "FRA", "ISL", "NPL", "LKA", "USA", "VNM"]
+    let flagArray = [ #imageLiteral(resourceName: "ButanFlag"), #imageLiteral(resourceName: "IndiaFlag"), #imageLiteral(resourceName: "FranceFlag"), #imageLiteral(resourceName: "IcelandFlag"), #imageLiteral(resourceName: "NepalFlag"), #imageLiteral(resourceName: "SriLankaFlag"), #imageLiteral(resourceName: "UnitedStatesOfAmericaFlag"), #imageLiteral(resourceName: "VietnamFlag")]
+    
+    let LanguageArray = ["CHINESE", "SPANISH", "ENGLISH", "HINDI", "ARABIC", "PORTUGUESE", "BENGALI", "RUSSIAN", "JAPANESE", "FRENCH"]
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,18 +47,34 @@ class AccountViewController: UIViewController {
         //make imageView to circular ImageView
         accountImageVIew.layer.cornerRadius = accountImageVIew.frame.size.height/2
         
+        //make circular corner of contentViewOfStackView
+        contentViewOfStackView.layer.cornerRadius = 10
+        
         //remove the extra empty cell of tableview
         accountTableView.tableFooterView = UIView()
         
         
+        //create 3 nib for multiple cell in single tableview and register all 3 nib to accountTableView
+        
         let nib = UINib(nibName: "AccountTableViewCell", bundle: nil)
         accountTableView.register(nib, forCellReuseIdentifier: "AccountTableCell")
+        
+        let nib2 = UINib(nibName: "CountryTableViewCell", bundle: nil)
+        accountTableView.register(nib2, forCellReuseIdentifier: "CountryTableCell")
+        
+        let nib3 = UINib(nibName: "LanguageTableViewCell", bundle: nil)
+        accountTableView.register(nib3, forCellReuseIdentifier: "LanguageTableCell")
+        
+        
         
         //This is code to make imageView clickable and in action we can perform clickable task
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
         
         accountImageVIew.isUserInteractionEnabled = true
         accountImageVIew.addGestureRecognizer(singleTap)
+        
+        createPickerForCountry()
+        createToolBar()
 
     }
     
@@ -114,7 +137,38 @@ class AccountViewController: UIViewController {
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
     
+    func createPickerForCountry() {
+        
+        let countryPicker = UIPickerView()
+        countryPicker.delegate = self
+        
+        demoTextField.inputView = countryPicker
+        countryPicker.backgroundColor = .white
+        
+    }
+    
+    
+    func createToolBar() {
+
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: nil, action: #selector(dismissKeyboard))
+
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+
+        demoTextField.inputAccessoryView = toolBar
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    
 }
+
+
 
 //MARK: TableViewDataSource & Delegate
 
@@ -128,22 +182,43 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = accountTableView.dequeueReusableCell(withIdentifier: "AccountTableCell", for: indexPath) as! AccountTableViewCell
-        
-        //set label text and image to tablecell
-        cell.setValueToLabel(text: labelArray[indexPath.section][indexPath.row])
-        cell.setImage(image: imageArray[indexPath.section][indexPath.row])
-        
+        //CountryTableCell for section 1 and row 0
         if indexPath.section == 1 && indexPath.row == 0 {
-            cell.setExtraImage(image: flagImage)
-            cell.setExtraLabel(text: countryName)
+            
+            let cell = accountTableView.dequeueReusableCell(withIdentifier: "CountryTableCell", for: indexPath) as! CountryTableViewCell
+            
+            cell.setCountryIconImageView(image: imageArray[1][0])
+            cell.setCountryTitleLabel(text: labelArray[1][0])
+            cell.setCountryFlagImageView(image: flagArray[3])
+            cell.setCountryNameLabel(text: countryNameArray[3])
+            
+            return cell
+            
         }
         
-        if indexPath.section == 1 && indexPath.row == 1 {
-            cell.setExtraLabel(text: languageName)
+        //LanguageTableCell for section 1 and row 1
+        else if indexPath.section == 1 && indexPath.row == 1 {
+           
+            let cell = accountTableView.dequeueReusableCell(withIdentifier: "LanguageTableCell", for: indexPath) as! LanguageTableViewCell
+            
+            cell.setLaguageIconImageView(image: imageArray[1][1])
+            cell.setLanguageTitleLabel(text: labelArray[1][1])
+            cell.setLanguageNameLabel(text: String(LanguageArray[0].prefix(3)))
+            
+            return cell
+            
         }
         
-        return cell
+        //AccountTableCell for remainings
+        else {
+            
+            let cell = accountTableView.dequeueReusableCell(withIdentifier: "AccountTableCell", for: indexPath) as! AccountTableViewCell
+        
+            cell.setValueToLabel(text: labelArray[indexPath.section][indexPath.row])
+            cell.setImage(image: imageArray[indexPath.section][indexPath.row])
+        
+            return cell
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -160,8 +235,22 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         
         accountTableView.deselectRow(at: indexPath, animated: true)
         
+        if indexPath.section == 1 && indexPath.row == 0 {
+            
+            print(countryNameArray[3])
+            createPickerForCountry()
+        }
+            
+        else if indexPath.section == 1 && indexPath.row == 1 {
+            
+            print(LanguageArray[0])
+        }
+            
+        else {
+            
         //call showToast to show label text of clicked cell
         showToast(controller: self, message : labelArray[indexPath.section][indexPath.row], seconds: 0.25)
+        }
 
     }
     
@@ -220,4 +309,31 @@ extension AccountViewController: UIImagePickerControllerDelegate, UINavigationCo
     
 }
 
+
+//MARK: UIPickerView Extension
+
+extension AccountViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return countryNameArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return countryNameArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        demoTextField.text = countryNameArray[row]
+    }
+    
+    
+    
+}
 

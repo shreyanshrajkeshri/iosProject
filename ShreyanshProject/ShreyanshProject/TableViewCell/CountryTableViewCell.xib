@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryTableCell" id="KGk-i7-Jjw" customClass="CountryTableViewCell" customModule="ShreyanshProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hlr-kp-Dg8">
+                        <rect key="frame" x="30" y="19" width="25" height="22.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="0zR-Yc-WmT"/>
+                            <constraint firstAttribute="width" constant="25" id="dWF-C0-0Qn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oET-1o-9w0">
+                        <rect key="frame" x="75" y="20" width="43" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="xyE-ru-vh3">
+                        <rect key="frame" x="290" y="20" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="n12-vu-WxI"/>
+                            <constraint firstAttribute="width" constant="20" id="p0Q-4h-E6j"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGJ-LX-kHK">
+                        <rect key="frame" x="251" y="20" width="29" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IndiaFlag" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-5t-Ngh">
+                        <rect key="frame" x="211" y="20" width="30" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="WGG-6N-g3E"/>
+                            <constraint firstAttribute="height" constant="20" id="a1A-qO-JIL"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uGJ-LX-kHK" firstAttribute="leading" secondItem="Dal-5t-Ngh" secondAttribute="trailing" constant="10" id="1IC-ma-iWs"/>
+                    <constraint firstAttribute="bottom" secondItem="xyE-ru-vh3" secondAttribute="bottom" constant="20" id="24N-TC-PwH"/>
+                    <constraint firstAttribute="bottom" secondItem="oET-1o-9w0" secondAttribute="bottom" constant="20" id="Ait-wX-TbL"/>
+                    <constraint firstItem="oET-1o-9w0" firstAttribute="leading" secondItem="Hlr-kp-Dg8" secondAttribute="trailing" constant="20" id="BhT-VW-CW1"/>
+                    <constraint firstItem="uGJ-LX-kHK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="IRo-aH-VSJ"/>
+                    <constraint firstAttribute="trailing" secondItem="xyE-ru-vh3" secondAttribute="trailing" constant="20" id="J5q-ef-Jse"/>
+                    <constraint firstItem="Hlr-kp-Dg8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Qu1-bJ-J9c"/>
+                    <constraint firstItem="Dal-5t-Ngh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aCG-SO-myd"/>
+                    <constraint firstItem="xyE-ru-vh3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="gvZ-bl-aTf"/>
+                    <constraint firstItem="Hlr-kp-Dg8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="pdy-a9-LNn"/>
+                    <constraint firstAttribute="bottom" secondItem="uGJ-LX-kHK" secondAttribute="bottom" constant="20" id="tVe-Of-7ZG"/>
+                    <constraint firstItem="xyE-ru-vh3" firstAttribute="leading" secondItem="uGJ-LX-kHK" secondAttribute="trailing" constant="10" id="x0h-ck-Zcf"/>
+                    <constraint firstItem="oET-1o-9w0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="zeP-GG-NtQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="countryFlagImageView" destination="Dal-5t-Ngh" id="Iy7-d0-Sns"/>
+                <outlet property="countryIconImageView" destination="Hlr-kp-Dg8" id="1cX-qg-TnG"/>
+                <outlet property="countryNameLabel" destination="uGJ-LX-kHK" id="Xp4-5p-CCj"/>
+                <outlet property="countryTitleLabel" destination="oET-1o-9w0" id="1UQ-mV-kfq"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="108"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="IndiaFlag" width="1500" height="1000"/>
+        <image name="arrowRight" width="256" height="256"/>
+        <image name="person" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
