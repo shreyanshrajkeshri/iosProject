@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E105ECE4242A0922001E0D02 /* CountryAndLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105ECE3242A0922001E0D02 /* CountryAndLanguageViewController.swift */; };
+		E105ECEC242A09EB001E0D02 /* LanguageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105ECEA242A09EB001E0D02 /* LanguageListTableViewCell.swift */; };
+		E105ECED242A09EB001E0D02 /* LanguageListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105ECEB242A09EB001E0D02 /* LanguageListTableViewCell.xib */; };
+		E105ECF0242A138C001E0D02 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105ECEE242A138C001E0D02 /* CountryListTableViewCell.swift */; };
+		E105ECF1242A138C001E0D02 /* CountryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */; };
 		E1291D59242548A6006112E6 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1291D58242548A6006112E6 /* RegistrationViewController.swift */; };
 		E1291D5B242548B4006112E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1291D5A242548B4006112E6 /* LoginViewController.swift */; };
 		E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325AD2424ABBF004756DC /* AppDelegate.swift */; };
@@ -49,6 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E105ECE3242A0922001E0D02 /* CountryAndLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAndLanguageViewController.swift; sourceTree = "<group>"; };
+		E105ECEA242A09EB001E0D02 /* LanguageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListTableViewCell.swift; sourceTree = "<group>"; };
+		E105ECEB242A09EB001E0D02 /* LanguageListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageListTableViewCell.xib; sourceTree = "<group>"; };
+		E105ECEE242A138C001E0D02 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
+		E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListTableViewCell.xib; sourceTree = "<group>"; };
 		E1291D58242548A6006112E6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E1291D5A242548B4006112E6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E15325AA2424ABBF004756DC /* ShreyanshProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShreyanshProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +114,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E105ECE9242A094E001E0D02 /* Country And Language */ = {
+			isa = PBXGroup;
+			children = (
+				E105ECE3242A0922001E0D02 /* CountryAndLanguageViewController.swift */,
+				E105ECEA242A09EB001E0D02 /* LanguageListTableViewCell.swift */,
+				E105ECEB242A09EB001E0D02 /* LanguageListTableViewCell.xib */,
+				E105ECEE242A138C001E0D02 /* CountryListTableViewCell.swift */,
+				E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */,
+			);
+			path = "Country And Language";
+			sourceTree = "<group>";
+		};
 		E15325A12424ABBF004756DC = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +156,11 @@
 				E15325B62424ABC1004756DC /* Assets.xcassets */,
 				E15325B82424ABC1004756DC /* LaunchScreen.storyboard */,
 				E15325BB2424ABC1004756DC /* Info.plist */,
-				E196400F2424B111009F50C3 /* MainTabBar */,
 				E1291D58242548A6006112E6 /* RegistrationViewController.swift */,
 				E1291D5A242548B4006112E6 /* LoginViewController.swift */,
+				E196400F2424B111009F50C3 /* MainTabBar */,
 				E17EDB6824274A6700310BC0 /* TableViewCell */,
+				E105ECE9242A094E001E0D02 /* Country And Language */,
 			);
 			path = ShreyanshProject;
 			sourceTree = "<group>";
@@ -290,9 +313,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E105ECF1242A138C001E0D02 /* CountryListTableViewCell.xib in Resources */,
 				E15325BA2424ABC1004756DC /* LaunchScreen.storyboard in Resources */,
 				E19640152424E7BF009F50C3 /* AccountTableViewCell.xib in Resources */,
 				E15325B72424ABC1004756DC /* Assets.xcassets in Resources */,
+				E105ECED242A09EB001E0D02 /* LanguageListTableViewCell.xib in Resources */,
 				E15325B52424ABBF004756DC /* Main.storyboard in Resources */,
 				E17EDB6C24274AAC00310BC0 /* CountryTableViewCell.xib in Resources */,
 				E17EDB7024274C8E00310BC0 /* LanguageTableViewCell.xib in Resources */,
@@ -326,12 +351,15 @@
 				E19640112424B1A2009F50C3 /* MainTabBarController.swift in Sources */,
 				E1291D59242548A6006112E6 /* RegistrationViewController.swift in Sources */,
 				E19640142424E7BF009F50C3 /* AccountTableViewCell.swift in Sources */,
+				E105ECF0242A138C001E0D02 /* CountryListTableViewCell.swift in Sources */,
 				E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */,
 				E196400C2424B0F3009F50C3 /* WishlistViewController.swift in Sources */,
 				E17EDB6B24274AAC00310BC0 /* CountryTableViewCell.swift in Sources */,
 				E15325B02424ABBF004756DC /* SceneDelegate.swift in Sources */,
+				E105ECE4242A0922001E0D02 /* CountryAndLanguageViewController.swift in Sources */,
 				E196400A2424B0E5009F50C3 /* MyCartViewController.swift in Sources */,
 				E196400E2424B104009F50C3 /* CategoriesViewController.swift in Sources */,
+				E105ECEC242A09EB001E0D02 /* LanguageListTableViewCell.swift in Sources */,
 				E19640062424B0C7009F50C3 /* HomeViewController.swift in Sources */,
 				E17EDB6F24274C8E00310BC0 /* LanguageTableViewCell.swift in Sources */,
 			);

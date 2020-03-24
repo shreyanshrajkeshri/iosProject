@@ -16,7 +16,6 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var contentViewOfStackView: UIView!
     
-    @IBOutlet weak var demoTextField: UITextField!
     
     //make nested array of stringn type
     let labelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Shipping & Returns"] ]
@@ -25,17 +24,14 @@ class AccountViewController: UIViewController {
        2. Use "Image Literal" to store the image which is available in Assets file  */
     
     let imageArray = [ [#imageLiteral(resourceName: "TrackOrder"), #imageLiteral(resourceName: "SizeChart"), #imageLiteral(resourceName: "Notifications"), #imageLiteral(resourceName: "StoreLocator")], [ #imageLiteral(resourceName: "Country"), #imageLiteral(resourceName: "Language"), #imageLiteral(resourceName: "AboutUs"), #imageLiteral(resourceName: "FAQ"), #imageLiteral(resourceName: "ShippingAndReturn")] ]
+   
     
-    let flagImage: UIImage = #imageLiteral(resourceName: "IndiaFlag")
-    let countryName = "IND"
-    let languageName = "ENG"
+    public static var languageName: String = "HINDI"
+    public static var countryName: String = "IND"
+    public static var flagImage: UIImage = #imageLiteral(resourceName: "IndiaFlag")
+     
     
-    let countryNameArray = ["BTN", "IND", "FRA", "ISL", "NPL", "LKA", "USA", "VNM"]
-    let flagArray = [ #imageLiteral(resourceName: "ButanFlag"), #imageLiteral(resourceName: "IndiaFlag"), #imageLiteral(resourceName: "FranceFlag"), #imageLiteral(resourceName: "IcelandFlag"), #imageLiteral(resourceName: "NepalFlag"), #imageLiteral(resourceName: "SriLankaFlag"), #imageLiteral(resourceName: "UnitedStatesOfAmericaFlag"), #imageLiteral(resourceName: "VietnamFlag")]
-    
-    let LanguageArray = ["CHINESE", "SPANISH", "ENGLISH", "HINDI", "ARABIC", "PORTUGUESE", "BENGALI", "RUSSIAN", "JAPANESE", "FRENCH"]
-    
-        
+    //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,10 +68,14 @@ class AccountViewController: UIViewController {
         
         accountImageVIew.isUserInteractionEnabled = true
         accountImageVIew.addGestureRecognizer(singleTap)
-        
-        createPickerForCountry()
-        createToolBar()
 
+    }
+    
+    //MARK: View Will Appear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        accountTableView.reloadData()
     }
     
     
@@ -136,36 +136,7 @@ class AccountViewController: UIViewController {
         //self.navigationController?.pushViewController(vc, animated: true)
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
-    
-    func createPickerForCountry() {
-        
-        let countryPicker = UIPickerView()
-        countryPicker.delegate = self
-        
-        demoTextField.inputView = countryPicker
-        countryPicker.backgroundColor = .white
-        
-    }
-    
-    
-    func createToolBar() {
-
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: nil, action: #selector(dismissKeyboard))
-
-        toolBar.setItems([doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-
-        demoTextField.inputAccessoryView = toolBar
-    }
-
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-
-    
+   
 }
 
 
@@ -180,6 +151,7 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         return labelArray[section].count
     }
     
+    //MARK: Cell For Row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //CountryTableCell for section 1 and row 0
@@ -189,8 +161,8 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.setCountryIconImageView(image: imageArray[1][0])
             cell.setCountryTitleLabel(text: labelArray[1][0])
-            cell.setCountryFlagImageView(image: flagArray[3])
-            cell.setCountryNameLabel(text: countryNameArray[3])
+            cell.setCountryFlagImageView(image: AccountViewController.flagImage)
+            cell.setCountryNameLabel(text: AccountViewController.countryName)
             
             return cell
             
@@ -203,7 +175,7 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.setLaguageIconImageView(image: imageArray[1][1])
             cell.setLanguageTitleLabel(text: labelArray[1][1])
-            cell.setLanguageNameLabel(text: String(LanguageArray[0].prefix(3)))
+            cell.setLanguageNameLabel(text: String(AccountViewController.languageName.prefix(3)))
             
             return cell
             
@@ -231,19 +203,32 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         return " "
     }
     
+    //MARK: Did Select Row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         accountTableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 1 && indexPath.row == 0 {
             
-            print(countryNameArray[3])
-            createPickerForCountry()
+            print(AccountViewController.countryName)
+            CountryAndLanguageViewController.cellMode = "Country"
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController")
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
             
         else if indexPath.section == 1 && indexPath.row == 1 {
             
-            print(LanguageArray[0])
+            print(AccountViewController.languageName)
+            CountryAndLanguageViewController.cellMode = "Language"
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController")
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
             
         else {
@@ -309,31 +294,4 @@ extension AccountViewController: UIImagePickerControllerDelegate, UINavigationCo
     
 }
 
-
-//MARK: UIPickerView Extension
-
-extension AccountViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        return countryNameArray.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        return countryNameArray[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        demoTextField.text = countryNameArray[row]
-    }
-    
-    
-    
-}
 

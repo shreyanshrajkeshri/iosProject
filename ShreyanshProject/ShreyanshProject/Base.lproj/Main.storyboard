@@ -140,12 +140,6 @@
                                             <constraint firstAttribute="height" constant="30" id="nwo-M9-Jlp"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y80-ON-tM0">
-                                        <rect key="frame" x="173" y="11" width="97" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -180,7 +174,6 @@
                         <outlet property="accountImageVIew" destination="Ix8-h8-kKS" id="frc-yM-jVN"/>
                         <outlet property="accountTableView" destination="BL3-BF-Uzh" id="Z7d-wL-W1b"/>
                         <outlet property="contentViewOfStackView" destination="5tc-J1-sBk" id="H6L-r0-nBV"/>
-                        <outlet property="demoTextField" destination="Y80-ON-tM0" id="sRh-ty-yBr"/>
                         <outlet property="joinButton" destination="uI3-En-g1b" id="Kb9-Vt-7ZX"/>
                         <outlet property="signInButton" destination="6nw-Lr-SjG" id="JzV-1T-fCR"/>
                     </connections>
@@ -188,6 +181,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rga-mZ-TOF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3689.8550724637685" y="1850.8928571428571"/>
+        </scene>
+        <!--Country And Language View Controller-->
+        <scene sceneID="hST-62-y4d">
+            <objects>
+                <viewController storyboardIdentifier="CountryAndLanguageViewController" id="z7y-P9-fiM" customClass="CountryAndLanguageViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CJ9-Jb-qZc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xsP-4J-l7z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xsP-4J-l7z" firstAttribute="top" secondItem="gxd-A1-Jqy" secondAttribute="top" id="CzO-C4-gXN"/>
+                            <constraint firstItem="gxd-A1-Jqy" firstAttribute="trailing" secondItem="xsP-4J-l7z" secondAttribute="trailing" id="Jhq-FF-tVE"/>
+                            <constraint firstItem="xsP-4J-l7z" firstAttribute="leading" secondItem="gxd-A1-Jqy" secondAttribute="leading" id="Y0P-0V-sYd"/>
+                            <constraint firstItem="gxd-A1-Jqy" firstAttribute="bottom" secondItem="xsP-4J-l7z" secondAttribute="bottom" id="nyI-Lj-fTS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gxd-A1-Jqy"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="xsP-4J-l7z" id="cIF-mB-EO5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrI-7B-5q6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4425" y="1851"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="reg-dG-0uI">
