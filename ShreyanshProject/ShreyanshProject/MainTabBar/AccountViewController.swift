@@ -17,18 +17,23 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var contentViewOfStackView: UIView!
     
     
-    //make nested array of stringn type
-    let labelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Shipping & Returns"] ]
+    //make nested array of string Type
+    let accountLabelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Shipping & Returns"] ]
     
     /* 1. Make nested array of image type this is help to use as much as image      we want to show in particular section.
        2. Use "Image Literal" to store the image which is available in Assets file  */
     
-    let imageArray = [ [#imageLiteral(resourceName: "TrackOrder"), #imageLiteral(resourceName: "SizeChart"), #imageLiteral(resourceName: "Notifications"), #imageLiteral(resourceName: "StoreLocator")], [ #imageLiteral(resourceName: "Country"), #imageLiteral(resourceName: "Language"), #imageLiteral(resourceName: "AboutUs"), #imageLiteral(resourceName: "FAQ"), #imageLiteral(resourceName: "ShippingAndReturn")] ]
+    let accountImageArray = [ [#imageLiteral(resourceName: "TrackOrder"), #imageLiteral(resourceName: "SizeChart"), #imageLiteral(resourceName: "Notifications"), #imageLiteral(resourceName: "StoreLocator")], [ #imageLiteral(resourceName: "Country"), #imageLiteral(resourceName: "Language"), #imageLiteral(resourceName: "AboutUs"), #imageLiteral(resourceName: "FAQ"), #imageLiteral(resourceName: "ShippingAndReturn")] ]
    
     
+    /* This Is like Sticky Note.
+     I am using this variable in this class also use this
+     from CountryAndLanguageViewController class */
+    
     public static var languageName: String = "HINDI"
-    public static var countryName: String = "IND"
+    public static var countryCode: String = "IN"
     public static var flagImage: UIImage = #imageLiteral(resourceName: "IndiaFlag")
+
      
     
     //MARK: View Did Load
@@ -80,7 +85,7 @@ class AccountViewController: UIViewController {
     
     
     
-    //MARK: Toast Function
+    //MARK: Toast()
     
     func showToast(controller: UIViewController, message : String, seconds: Double) {
         
@@ -97,6 +102,7 @@ class AccountViewController: UIViewController {
     }
     
     
+    //MARK: Tap Detected()
     //ImageView Action and we neet to add @objc to fix the error which come in singleTap
     @objc func tapDetected() {
         
@@ -148,7 +154,7 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          
-        return labelArray[section].count
+        return accountLabelArray[section].count
     }
     
     //MARK: Cell For Row
@@ -159,10 +165,27 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             
             let cell = accountTableView.dequeueReusableCell(withIdentifier: "CountryTableCell", for: indexPath) as! CountryTableViewCell
             
-            cell.setCountryIconImageView(image: imageArray[1][0])
-            cell.setCountryTitleLabel(text: labelArray[1][0])
-            cell.setCountryFlagImageView(image: AccountViewController.flagImage)
-            cell.setCountryNameLabel(text: AccountViewController.countryName)
+            cell.setCountryIconImageView(image: accountImageArray[1][0])
+            cell.setCountryTitleLabel(text: accountLabelArray[1][0])
+            //cell.setCountryFlagImageView(image: AccountViewController.flagImage)
+            cell.setCountryNameLabel(text: AccountViewController.countryCode)
+            
+            
+            //this is code to get image from server via countryCode and set it in cell.FlagImage
+            if let url = URL(string: "https://www.countryflags.io/\(AccountViewController.countryCode)/flat/64.png") {
+                
+                URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            
+                            //here i pass image to cell.FlagImage
+                            cell.setCountryFlagImageView(image: UIImage(data: data) ?? AccountViewController.flagImage)
+                            cell.countryFlagImageView.contentMode = .scaleAspectFill
+
+                        }
+                    }
+                }.resume()
+            }
             
             return cell
             
@@ -173,8 +196,8 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
            
             let cell = accountTableView.dequeueReusableCell(withIdentifier: "LanguageTableCell", for: indexPath) as! LanguageTableViewCell
             
-            cell.setLaguageIconImageView(image: imageArray[1][1])
-            cell.setLanguageTitleLabel(text: labelArray[1][1])
+            cell.setLaguageIconImageView(image: accountImageArray[1][1])
+            cell.setLanguageTitleLabel(text: accountLabelArray[1][1])
             cell.setLanguageNameLabel(text: String(AccountViewController.languageName.prefix(3)))
             
             return cell
@@ -186,15 +209,15 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             
             let cell = accountTableView.dequeueReusableCell(withIdentifier: "AccountTableCell", for: indexPath) as! AccountTableViewCell
         
-            cell.setValueToLabel(text: labelArray[indexPath.section][indexPath.row])
-            cell.setImage(image: imageArray[indexPath.section][indexPath.row])
+            cell.setValueToLabel(text: accountLabelArray[indexPath.section][indexPath.row])
+            cell.setImage(image: accountImageArray[indexPath.section][indexPath.row])
         
             return cell
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return labelArray.count
+        return accountLabelArray.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -208,9 +231,10 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         
         accountTableView.deselectRow(at: indexPath, animated: true)
         
+        //CountryTableCell is selected
         if indexPath.section == 1 && indexPath.row == 0 {
             
-            print(AccountViewController.countryName)
+            print(AccountViewController.countryCode)
             CountryAndLanguageViewController.cellMode = "Country"
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -219,7 +243,8 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
-            
+         
+        //LanguageTableCell is selected
         else if indexPath.section == 1 && indexPath.row == 1 {
             
             print(AccountViewController.languageName)
@@ -230,11 +255,13 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        
             
+        //AccountTableCell is selected
         else {
             
         //call showToast to show label text of clicked cell
-        showToast(controller: self, message : labelArray[indexPath.section][indexPath.row], seconds: 0.25)
+        showToast(controller: self, message : accountLabelArray[indexPath.section][indexPath.row], seconds: 0.25)
         }
 
     }
@@ -245,7 +272,7 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: ImagePickerController Extension
 
-//we need to use extension both Delegate because          "myPickerController.delegate = self"
+//we need to use extension both Delegate because "myPickerController.delegate = self"
 
 extension AccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

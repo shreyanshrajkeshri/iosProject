@@ -36,42 +36,22 @@
                             <constraint firstAttribute="height" constant="20" id="g8u-p7-L2N"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnH-p2-Nuc">
-                        <rect key="frame" x="271" y="20" width="9" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tyG-Ox-dWe">
-                        <rect key="frame" x="231" y="20" width="30" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="mvb-tC-JCc"/>
-                            <constraint firstAttribute="width" constant="30" id="x4n-wa-kwb"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="zLI-BR-i6a" secondAttribute="bottom" constant="20" id="3g5-wX-wCz"/>
                     <constraint firstAttribute="trailing" secondItem="nZQ-cg-bFm" secondAttribute="trailing" constant="20" id="BCd-X3-H1N"/>
                     <constraint firstItem="zLI-BR-i6a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="EXq-SF-uW4"/>
-                    <constraint firstItem="nZQ-cg-bFm" firstAttribute="leading" secondItem="CnH-p2-Nuc" secondAttribute="trailing" constant="10" id="Grt-ER-BNl"/>
-                    <constraint firstItem="CnH-p2-Nuc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="JJu-OK-yX4"/>
                     <constraint firstItem="eAd-V7-e6s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="QAq-5O-FTd"/>
-                    <constraint firstItem="tyG-Ox-dWe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SUg-vy-YFX"/>
                     <constraint firstItem="zLI-BR-i6a" firstAttribute="leading" secondItem="eAd-V7-e6s" secondAttribute="trailing" constant="20" id="bPa-hY-uWY"/>
                     <constraint firstAttribute="bottom" secondItem="nZQ-cg-bFm" secondAttribute="bottom" constant="20" id="eLs-yD-CZz"/>
                     <constraint firstItem="nZQ-cg-bFm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="jQN-IH-cgH"/>
-                    <constraint firstAttribute="bottom" secondItem="CnH-p2-Nuc" secondAttribute="bottom" constant="20" id="w8F-Bp-UX9"/>
                     <constraint firstItem="eAd-V7-e6s" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="x9t-uQ-mOa"/>
-                    <constraint firstItem="CnH-p2-Nuc" firstAttribute="leading" secondItem="tyG-Ox-dWe" secondAttribute="trailing" constant="10" id="xOB-Vs-43q"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="accountCellImageView" destination="eAd-V7-e6s" id="Qfp-dh-QMi"/>
                 <outlet property="accountCellLabel" destination="zLI-BR-i6a" id="T3J-aO-sOu"/>
-                <outlet property="extraImageView" destination="tyG-Ox-dWe" id="4yU-r6-tMB"/>
-                <outlet property="extraLabel" destination="CnH-p2-Nuc" id="XZy-XS-p5e"/>
             </connections>
             <point key="canvasLocation" x="137" y="115"/>
         </tableViewCell>

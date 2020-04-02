@@ -38,16 +38,4 @@ class AccountTableViewCell: UITableViewCell {
         
         accountCellImageView.image = image
     }
-    
-    func setExtraImage(image: UIImage) {
-        
-        extraImageView.image = image
-    }
-    
-    func setExtraLabel(text: String) {
-        
-        extraLabel.text = text
-    }
-    
-    
 }

@@ -153,14 +153,14 @@
 				E15325AF2424ABBF004756DC /* SceneDelegate.swift */,
 				E15325B12424ABBF004756DC /* ViewController.swift */,
 				E15325B32424ABBF004756DC /* Main.storyboard */,
-				E15325B62424ABC1004756DC /* Assets.xcassets */,
-				E15325B82424ABC1004756DC /* LaunchScreen.storyboard */,
-				E15325BB2424ABC1004756DC /* Info.plist */,
 				E1291D58242548A6006112E6 /* RegistrationViewController.swift */,
 				E1291D5A242548B4006112E6 /* LoginViewController.swift */,
 				E196400F2424B111009F50C3 /* MainTabBar */,
-				E17EDB6824274A6700310BC0 /* TableViewCell */,
 				E105ECE9242A094E001E0D02 /* Country And Language */,
+				E17EDB6824274A6700310BC0 /* TableViewCell */,
+				E15325B62424ABC1004756DC /* Assets.xcassets */,
+				E15325B82424ABC1004756DC /* LaunchScreen.storyboard */,
+				E15325BB2424ABC1004756DC /* Info.plist */,
 			);
 			path = ShreyanshProject;
 			sourceTree = "<group>";
