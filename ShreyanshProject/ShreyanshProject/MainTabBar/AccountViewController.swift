@@ -235,7 +235,7 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.section == 1 && indexPath.row == 0 {
             
             print(AccountViewController.countryCode)
-            CountryAndLanguageViewController.cellMode = "Country"
+            CountryAndLanguageViewController.cellMode = .Country
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController")
@@ -248,7 +248,7 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         else if indexPath.section == 1 && indexPath.row == 1 {
             
             print(AccountViewController.languageName)
-            CountryAndLanguageViewController.cellMode = "Language"
+            CountryAndLanguageViewController.cellMode = .Language
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController")

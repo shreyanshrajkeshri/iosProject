@@ -13,11 +13,6 @@ class CountryAndLanguageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    struct Country {
-        let countryName: String
-        let countryCode: String
-    }
-    
     // Details use For LaguageTableCell
     var languageNameArray = [String]()
     
@@ -25,17 +20,19 @@ class CountryAndLanguageViewController: UIViewController {
     let flagImageDemo = #imageLiteral(resourceName: "IndiaFlag")
 
     // Use NSLocale and get CountryCode after that use compactMap and change to full name string
-    // we use CompactMap due to its only take non-empty value.
+    //I use CompactMap due to its only take non-empty value.
     var countryArray = [Country]()
     var countryCodeArray = NSLocale.isoCountryCodes
     var countryNameArray = NSLocale.isoCountryCodes.compactMap {
         NSLocale.current.localizedString(forRegionCode: $0) }
 
 
-    //this is help to find which mode is selected for example "Country" for use CountryTableCell and "Language" for use LanguageTableCell
+    //This is help to find which mode is selected for example:
+    //.Country for use CountryTableCell
+    //.Language for use LanguageTableCell
     
-    //TODO: try to use this by using enum
-    public static var cellMode: String = "None"
+    //Use enum here which is declare in Module.swift File
+    public static var cellMode: CellMode = .None
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -108,9 +105,9 @@ extension CountryAndLanguageViewController: UITableViewDataSource, UITableViewDe
         //check which mode is use and return that much of integer value accounding to this.
         
         switch CountryAndLanguageViewController.cellMode {
-        case "Country":
+        case .Country:
             return countryArray.count
-        case "Language":
+        case .Language:
             return languageNameArray.count
         default:
             return 0
@@ -124,7 +121,7 @@ extension CountryAndLanguageViewController: UITableViewDataSource, UITableViewDe
         
         
         //for Mode is "Country"
-        if CountryAndLanguageViewController.cellMode == "Country" {
+        if CountryAndLanguageViewController.cellMode == .Country {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "CountryListTableCell", for: indexPath) as! CountryListTableViewCell
             
@@ -132,11 +129,11 @@ extension CountryAndLanguageViewController: UITableViewDataSource, UITableViewDe
             
             //this is code to get image from server via countryCode and set it in cell.FlagImage
             if let url = URL(string: "https://www.countryflags.io/\(countryArray[indexPath.row].countryCode)/flat/64.png") {
-                
+
                 URLSession.shared.dataTask(with: url) { (data, response, error) in
                     if let data = data {
                         DispatchQueue.main.async {
-                            
+
                             //here i pass image to cell.FlagImage
                             cell.setFlageImageView(image: UIImage(data: data) ?? self.flagImageDemo)
                             cell.flagImageView.contentMode = .scaleAspectFill
@@ -144,6 +141,7 @@ extension CountryAndLanguageViewController: UITableViewDataSource, UITableViewDe
                     }
                 }.resume()
             }
+            
             
             return cell
         }
@@ -166,7 +164,7 @@ extension CountryAndLanguageViewController: UITableViewDataSource, UITableViewDe
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if CountryAndLanguageViewController.cellMode == "Country" {
+        if CountryAndLanguageViewController.cellMode == .Country {
             
             AccountViewController.countryCode = countryArray[indexPath.row].countryCode
         }
@@ -199,7 +197,7 @@ extension CountryAndLanguageViewController: UISearchBarDelegate, UISearchControl
         
         guard let searchText = searchController.searchBar.text else { return }
         
-        if CountryAndLanguageViewController.cellMode == "Language" {
+        if CountryAndLanguageViewController.cellMode == .Language {
             
             fillValueOfLanguageNameArray()
             

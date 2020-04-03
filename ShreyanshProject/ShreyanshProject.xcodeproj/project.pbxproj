@@ -14,6 +14,7 @@
 		E105ECF1242A138C001E0D02 /* CountryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */; };
 		E1291D59242548A6006112E6 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1291D58242548A6006112E6 /* RegistrationViewController.swift */; };
 		E1291D5B242548B4006112E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1291D5A242548B4006112E6 /* LoginViewController.swift */; };
+		E12AB9C62436435F002F5DA1 /* module.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12AB9C52436435F002F5DA1 /* module.swift */; };
 		E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325AD2424ABBF004756DC /* AppDelegate.swift */; };
 		E15325B02424ABBF004756DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325AF2424ABBF004756DC /* SceneDelegate.swift */; };
 		E15325B22424ABBF004756DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325B12424ABBF004756DC /* ViewController.swift */; };
@@ -61,6 +62,7 @@
 		E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListTableViewCell.xib; sourceTree = "<group>"; };
 		E1291D58242548A6006112E6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E1291D5A242548B4006112E6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E12AB9C52436435F002F5DA1 /* module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = module.swift; sourceTree = "<group>"; };
 		E15325AA2424ABBF004756DC /* ShreyanshProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShreyanshProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15325AD2424ABBF004756DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E15325AF2424ABBF004756DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				E15325B32424ABBF004756DC /* Main.storyboard */,
 				E1291D58242548A6006112E6 /* RegistrationViewController.swift */,
 				E1291D5A242548B4006112E6 /* LoginViewController.swift */,
+				E12AB9C52436435F002F5DA1 /* module.swift */,
 				E196400F2424B111009F50C3 /* MainTabBar */,
 				E105ECE9242A094E001E0D02 /* Country And Language */,
 				E17EDB6824274A6700310BC0 /* TableViewCell */,
@@ -360,6 +363,7 @@
 				E196400A2424B0E5009F50C3 /* MyCartViewController.swift in Sources */,
 				E196400E2424B104009F50C3 /* CategoriesViewController.swift in Sources */,
 				E105ECEC242A09EB001E0D02 /* LanguageListTableViewCell.swift in Sources */,
+				E12AB9C62436435F002F5DA1 /* module.swift in Sources */,
 				E19640062424B0C7009F50C3 /* HomeViewController.swift in Sources */,
 				E17EDB6F24274C8E00310BC0 /* LanguageTableViewCell.swift in Sources */,
 			);
