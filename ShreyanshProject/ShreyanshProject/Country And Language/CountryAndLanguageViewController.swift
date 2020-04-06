@@ -36,6 +36,11 @@ class CountryAndLanguageViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    /* Basically i use delegate and protocol to pass the Data from This ViewCountroller to AccountViewController
+    Object of LanguageProtocol which is declare inside Module.swift */
+    
+    var delegate: LanguageProtocol!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,9 +176,9 @@ extension CountryAndLanguageViewController: UITableViewDataSource, UITableViewDe
             
         else {
            
-            //pass the selected language name and prefix them (3) also change all letter in uppercase
+            //pass the selected language name and prefix them (3) also change all letter in uppercase this is done by using getSelectedLanguage which is declare inside LanguageProtocol
             
-            AccountViewController.languageName = String(languageNameArray[indexPath.row].prefix(3).uppercased())
+            delegate.getSelectedLanguage(languageName: String(languageNameArray[indexPath.row].prefix(3).uppercased()))
         }
         
         self.navigationController?.popViewController(animated: true)

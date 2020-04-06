@@ -30,9 +30,12 @@ class AccountViewController: UIViewController {
      I am using this variable in this class also use this
      from CountryAndLanguageViewController class */
     
-    public static var languageName: String = "HINDI"
+    //public static var languageName: String = "HINDI"
     public static var countryCode: String = "IN"
-    public static var flagImage: UIImage = #imageLiteral(resourceName: "IndiaFlag")
+    var flagImage: UIImage = #imageLiteral(resourceName: "IndiaFlag")
+    
+    var languageName: String = "HINDI"
+
 
      
     
@@ -179,7 +182,7 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
                         DispatchQueue.main.async {
                             
                             //here i pass image to cell.FlagImage
-                            cell.setCountryFlagImageView(image: UIImage(data: data) ?? AccountViewController.flagImage)
+                            cell.setCountryFlagImageView(image: UIImage(data: data) ?? self.flagImage)
                             cell.countryFlagImageView.contentMode = .scaleAspectFill
 
                         }
@@ -198,7 +201,7 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.setLaguageIconImageView(image: accountImageArray[1][1])
             cell.setLanguageTitleLabel(text: accountLabelArray[1][1])
-            cell.setLanguageNameLabel(text: String(AccountViewController.languageName.prefix(3)))
+            cell.setLanguageNameLabel(text: String(languageName.prefix(3)))
             
             return cell
             
@@ -247,11 +250,14 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         //LanguageTableCell is selected
         else if indexPath.section == 1 && indexPath.row == 1 {
             
-            print(AccountViewController.languageName)
+            print(languageName)
             CountryAndLanguageViewController.cellMode = .Language
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController")
+            let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController") as! CountryAndLanguageViewController
+            
+            //we need to assign self to delegate which is declare inside CountryAndLanguageViewController
+            vc.delegate = self
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -318,6 +324,19 @@ extension AccountViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
         
     }
+    
+}
+
+
+extension AccountViewController: LanguageProtocol {
+    
+    func getSelectedLanguage(languageName: String) {
+        
+        //here i assign the value languageNmae which come from CountryAndLanguageViewController and set is to AccountViewController's languageName
+        self.languageName = languageName
+        
+    }
+    
     
 }
 

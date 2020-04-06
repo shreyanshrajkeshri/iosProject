@@ -18,3 +18,9 @@ struct Country {
     let countryName: String
     let countryCode: String
 }
+
+
+public protocol LanguageProtocol {
+    
+    func getSelectedLanguage(languageName: String)
+}
