@@ -24,3 +24,8 @@ public protocol LanguageProtocol {
     
     func getSelectedLanguage(languageName: String)
 }
+
+public protocol CountryProtocol {
+    
+    func getSelectedCountryCode(countryCode: String)
+}

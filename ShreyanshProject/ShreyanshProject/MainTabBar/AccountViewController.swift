@@ -31,8 +31,8 @@ class AccountViewController: UIViewController {
      from CountryAndLanguageViewController class */
     
     //public static var languageName: String = "HINDI"
-    public static var countryCode: String = "IN"
-    var flagImage: UIImage = #imageLiteral(resourceName: "IndiaFlag")
+    var countryCode: String = "IN"
+    var flagImage: UIImage = #imageLiteral(resourceName: "NotFound")
     
     var languageName: String = "HINDI"
 
@@ -171,11 +171,11 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setCountryIconImageView(image: accountImageArray[1][0])
             cell.setCountryTitleLabel(text: accountLabelArray[1][0])
             //cell.setCountryFlagImageView(image: AccountViewController.flagImage)
-            cell.setCountryNameLabel(text: AccountViewController.countryCode)
+            cell.setCountryNameLabel(text: countryCode)
             
             
             //this is code to get image from server via countryCode and set it in cell.FlagImage
-            if let url = URL(string: "https://www.countryflags.io/\(AccountViewController.countryCode)/flat/64.png") {
+            if let url = URL(string: "https://www.countryflags.io/\(countryCode)/flat/64.png") {
                 
                 URLSession.shared.dataTask(with: url) { (data, response, error) in
                     if let data = data {
@@ -234,14 +234,17 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         
         accountTableView.deselectRow(at: indexPath, animated: true)
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController") as! CountryAndLanguageViewController
+        
         //CountryTableCell is selected
         if indexPath.section == 1 && indexPath.row == 0 {
             
-            print(AccountViewController.countryCode)
+            print(countryCode)
             CountryAndLanguageViewController.cellMode = .Country
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController")
+            //we need to assign self to countrydelegate which is declare inside CountryAndLanguageViewController
+            vc.countryDelegate = self
             
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -253,11 +256,8 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             print(languageName)
             CountryAndLanguageViewController.cellMode = .Language
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "CountryAndLanguageViewController") as! CountryAndLanguageViewController
-            
-            //we need to assign self to delegate which is declare inside CountryAndLanguageViewController
-            vc.delegate = self
+            //we need to assign self to languagedelegate which is declare inside CountryAndLanguageViewController
+            vc.languageDelegate = self
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -327,6 +327,7 @@ extension AccountViewController: UIImagePickerControllerDelegate, UINavigationCo
     
 }
 
+//MARK: LanguageProtocol Extension
 
 extension AccountViewController: LanguageProtocol {
     
@@ -341,3 +342,16 @@ extension AccountViewController: LanguageProtocol {
 }
 
 
+//MARK: CountryProtocol Extension
+
+extension AccountViewController: CountryProtocol {
+    
+    func getSelectedCountryCode(countryCode: String) {
+        
+        //here i assign the value countryCode which come from CountryAndLanguageViewController and set is to AccountViewController's countryCode
+
+        self.countryCode = countryCode
+    }
+    
+    
+}

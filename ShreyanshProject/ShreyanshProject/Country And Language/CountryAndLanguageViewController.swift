@@ -17,7 +17,7 @@ class CountryAndLanguageViewController: UIViewController {
     var languageNameArray = [String]()
     
     //details Use For CountryTabelCell
-    let flagImageDemo = #imageLiteral(resourceName: "IndiaFlag")
+    let flagImageDemo = #imageLiteral(resourceName: "NotFound")
 
     // Use NSLocale and get CountryCode after that use compactMap and change to full name string
     //I use CompactMap due to its only take non-empty value.
@@ -36,10 +36,13 @@ class CountryAndLanguageViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    /* Basically i use delegate and protocol to pass the Data from This ViewCountroller to AccountViewController
-    Object of LanguageProtocol which is declare inside Module.swift */
+    /*  1. Basically i use delegate and protocol to pass the Data from This
+           ViewCountroller to AccountViewController
+        2. Object of LanguageProtocol and CountryProtocol which is declare inside Module.swift
+    */
     
-    var delegate: LanguageProtocol!
+    var languageDelegate: LanguageProtocol!
+    var countryDelegate: CountryProtocol!
     
 
     override func viewDidLoad() {
@@ -171,14 +174,16 @@ extension CountryAndLanguageViewController: UITableViewDataSource, UITableViewDe
         
         if CountryAndLanguageViewController.cellMode == .Country {
             
-            AccountViewController.countryCode = countryArray[indexPath.row].countryCode
+            //pass the selected countryCode this is done by using getSelectedCountryCode which is declare inside CountryProtocol
+
+            countryDelegate.getSelectedCountryCode(countryCode: countryArray[indexPath.row].countryCode)
         }
             
         else {
            
             //pass the selected language name and prefix them (3) also change all letter in uppercase this is done by using getSelectedLanguage which is declare inside LanguageProtocol
             
-            delegate.getSelectedLanguage(languageName: String(languageNameArray[indexPath.row].prefix(3).uppercased()))
+            languageDelegate.getSelectedLanguage(languageName: String(languageNameArray[indexPath.row].prefix(3).uppercased()))
         }
         
         self.navigationController?.popViewController(animated: true)
