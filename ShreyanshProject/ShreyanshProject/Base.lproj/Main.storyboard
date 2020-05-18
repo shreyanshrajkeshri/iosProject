@@ -22,16 +22,16 @@
             </objects>
             <point key="canvasLocation" x="139" y="98"/>
         </scene>
-        <!--Categories View Controller-->
+        <!--Employees View Controller-->
         <scene sceneID="TI9-7a-myJ">
             <objects>
-                <viewController storyboardIdentifier="CategoriesViewController" id="qrL-3y-OJY" customClass="CategoriesViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesViewController" id="qrL-3y-OJY" customClass="EmployeesViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tME-NQ-Tig">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aff-wN-Cph">
-                                <rect key="frame" x="35.5" y="430" width="343.5" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employees View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aff-wN-Cph">
+                                <rect key="frame" x="35" y="430" width="344" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,16 +50,16 @@
             </objects>
             <point key="canvasLocation" x="1196" y="1851"/>
         </scene>
-        <!--My Cart View Controller-->
+        <!--Favourite View Controller-->
         <scene sceneID="VcS-dG-yJC">
             <objects>
-                <viewController storyboardIdentifier="MyCartViewController" id="Ckk-Nc-lU2" customClass="MyCartViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyCartViewController" id="Ckk-Nc-lU2" customClass="FavouriteViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m3O-oP-Tbo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Cart View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGu-Om-Owl">
-                                <rect key="frame" x="54.5" y="430" width="305.5" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGu-Om-Owl">
+                                <rect key="frame" x="46.5" y="430" width="321" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,16 +78,16 @@
             </objects>
             <point key="canvasLocation" x="2086" y="1851"/>
         </scene>
-        <!--Wishlist View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="bOc-IQ-OUg">
             <objects>
-                <viewController storyboardIdentifier="WishlistViewController" id="ISQ-fr-Vna" customClass="WishlistViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishlistViewController" id="ISQ-fr-Vna" customClass="ChatViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eoi-1J-ph2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNk-PA-bAF">
-                                <rect key="frame" x="54.5" y="430" width="305" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNk-PA-bAF">
+                                <rect key="frame" x="74.5" y="430" width="265" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -247,6 +247,36 @@
             </objects>
             <point key="canvasLocation" x="5184" y="1851"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Bzb-V8-E3q">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="vxO-JJ-1VY" customClass="MapViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l5Q-vT-sPT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URR-Ww-fy6" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jzL-2L-JqK" firstAttribute="bottom" secondItem="URR-Ww-fy6" secondAttribute="bottom" id="AXI-gO-j6l"/>
+                            <constraint firstItem="URR-Ww-fy6" firstAttribute="top" secondItem="jzL-2L-JqK" secondAttribute="top" id="NBB-oN-HFU"/>
+                            <constraint firstItem="jzL-2L-JqK" firstAttribute="trailing" secondItem="URR-Ww-fy6" secondAttribute="trailing" id="UXP-Jp-jvh"/>
+                            <constraint firstItem="URR-Ww-fy6" firstAttribute="leading" secondItem="jzL-2L-JqK" secondAttribute="leading" id="vH3-Ma-TGG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jzL-2L-JqK"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="URR-Ww-fy6" id="UjN-Dc-hBZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wqu-sw-8Ke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6165" y="1851"/>
+        </scene>
         <!--Registration View Controller-->
         <scene sceneID="reg-dG-0uI">
             <objects>
@@ -375,7 +405,7 @@
         <scene sceneID="rsQ-9G-dfa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cY4-PK-R2x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="i5Z-Ah-hzl"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="i5Z-Ah-hzl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="igm-ME-H0s">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -390,11 +420,11 @@
             </objects>
             <point key="canvasLocation" x="223" y="1065"/>
         </scene>
-        <!--Categories-->
+        <!--Employees-->
         <scene sceneID="2Of-fq-Jka">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0mu-83-QpW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Categories" image="list.dash" catalog="system" id="Xp2-XJ-5hK"/>
+                    <tabBarItem key="tabBarItem" title="Employees" image="person.3.fill" catalog="system" id="Xp2-XJ-5hK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHA-qW-0cm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -409,11 +439,11 @@
             </objects>
             <point key="canvasLocation" x="1196" y="1065"/>
         </scene>
-        <!--My Cart-->
+        <!--Favourite-->
         <scene sceneID="61g-YN-CJN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="knc-v2-5WE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Cart" image="cart" catalog="system" badgeValue="1" id="2Si-HG-dzU">
+                    <tabBarItem key="tabBarItem" title="Favourite" image="heart.fill" catalog="system" id="2Si-HG-dzU">
                         <color key="badgeColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -430,11 +460,11 @@
             </objects>
             <point key="canvasLocation" x="2086" y="1065"/>
         </scene>
-        <!--Wishlist-->
+        <!--Chat-->
         <scene sceneID="afB-sY-JyG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RAL-w5-FNd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wishlist" image="heart" catalog="system" id="mFJ-9J-WER"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="message.fill" catalog="system" id="mFJ-9J-WER"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MnX-kJ-PS9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -451,10 +481,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart" catalog="system" width="64" height="50"/>
-        <image name="heart" catalog="system" width="64" height="54"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="list.dash" catalog="system" width="64" height="42"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="message.fill" catalog="system" width="64" height="56"/>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>

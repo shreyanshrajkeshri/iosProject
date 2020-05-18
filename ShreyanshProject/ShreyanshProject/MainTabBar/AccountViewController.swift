@@ -87,6 +87,24 @@ class AccountViewController: UIViewController {
     }
     
     
+//    func downloadImageViaURL(urlString: String) -> UIImage {
+//
+//        var image: UIImage = #imageLiteral(resourceName: "NoImage")
+//        if let url = URL(string: urlString) {
+//            URLSession.shared.dataTask(with: url) { (data, response, error) in
+//
+//                if let data = data {
+//                    DispatchQueue.main.async {
+//                        image = UIImage(data: data) ?? image
+//                    }
+//
+//                }
+//            }.resume()
+//        }
+//
+//        return image
+//    }
+//
     
     //MARK: Toast()
     
@@ -176,11 +194,11 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             
             //this is code to get image from server via countryCode and set it in cell.FlagImage
             if let url = URL(string: "https://www.countryflags.io/\(countryCode)/flat/64.png") {
-                
+
                 URLSession.shared.dataTask(with: url) { (data, response, error) in
                     if let data = data {
                         DispatchQueue.main.async {
-                            
+
                             //here i pass image to cell.FlagImage
                             cell.setCountryFlagImageView(image: UIImage(data: data) ?? self.flagImage)
                             cell.countryFlagImageView.contentMode = .scaleAspectFill
@@ -261,6 +279,14 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
+            
+        //Store Location is selected
+        else if indexPath.section == 0 && indexPath.row == 3 {
+            
+            let vc = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
             
         //AccountTableCell is selected
@@ -337,8 +363,6 @@ extension AccountViewController: LanguageProtocol {
         self.languageName = languageName
         
     }
-    
-    
 }
 
 
@@ -352,6 +376,4 @@ extension AccountViewController: CountryProtocol {
 
         self.countryCode = countryCode
     }
-    
-    
 }
