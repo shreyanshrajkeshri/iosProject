@@ -9,22 +9,32 @@
 import UIKit
 
 class EmployeesViewController: UIViewController {
-
+    
+    @IBOutlet weak var listedView: UIView!
+    @IBOutlet weak var detailsView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        listedView.isHidden = false
+        detailsView.isHidden = true
+         
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            listedView.isHidden = false
+            detailsView.isHidden = true
+        }
+        else {
+            listedView.isHidden = true
+            detailsView.isHidden = false
+        }
     }
-    */
-
+    
 }

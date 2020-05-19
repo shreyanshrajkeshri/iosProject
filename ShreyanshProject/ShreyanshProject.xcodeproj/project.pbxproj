@@ -37,6 +37,13 @@
 		E19640142424E7BF009F50C3 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19640122424E7BF009F50C3 /* AccountTableViewCell.swift */; };
 		E19640152424E7BF009F50C3 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E19640132424E7BF009F50C3 /* AccountTableViewCell.xib */; };
 		E1C840A6247273AC0029DB7A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840A5247273AC0029DB7A /* MapViewController.swift */; };
+		E1C840A924729BDE0029DB7A /* ListedEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840A824729BDE0029DB7A /* ListedEmployeesViewController.swift */; };
+		E1C840AB24729BFB0029DB7A /* DetailsEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840AA24729BFB0029DB7A /* DetailsEmployeesViewController.swift */; };
+		E1C840AD2472AFD80029DB7A /* EmployeesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840AC2472AFD80029DB7A /* EmployeesModule.swift */; };
+		E1C840B12473B95C0029DB7A /* ListedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840AF2473B95C0029DB7A /* ListedTableViewCell.swift */; };
+		E1C840B22473B95C0029DB7A /* ListedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C840B02473B95C0029DB7A /* ListedTableViewCell.xib */; };
+		E1C840B52473C1D40029DB7A /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840B32473C1D40029DB7A /* DetailsTableViewCell.swift */; };
+		E1C840B62473C1D40029DB7A /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C840B42473C1D40029DB7A /* DetailsTableViewCell.xib */; };
 		E2E9F053DA324E335AF930DD /* Pods_ShreyanshProject_ShreyanshProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C6542A9903E8A1368AC94E /* Pods_ShreyanshProject_ShreyanshProjectUITests.framework */; };
 		EFCF0AD8B8C55168BE6C3935 /* Pods_ShreyanshProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095F41F03FC80D78A7AB16D2 /* Pods_ShreyanshProject.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +108,13 @@
 		E19640122424E7BF009F50C3 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		E19640132424E7BF009F50C3 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		E1C840A5247273AC0029DB7A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E1C840A824729BDE0029DB7A /* ListedEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedEmployeesViewController.swift; sourceTree = "<group>"; };
+		E1C840AA24729BFB0029DB7A /* DetailsEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEmployeesViewController.swift; sourceTree = "<group>"; };
+		E1C840AC2472AFD80029DB7A /* EmployeesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesModule.swift; sourceTree = "<group>"; };
+		E1C840AF2473B95C0029DB7A /* ListedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedTableViewCell.swift; sourceTree = "<group>"; };
+		E1C840B02473B95C0029DB7A /* ListedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListedTableViewCell.xib; sourceTree = "<group>"; };
+		E1C840B32473C1D40029DB7A /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		E1C840B42473C1D40029DB7A /* DetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsTableViewCell.xib; sourceTree = "<group>"; };
 		E3C3E2CC0FA22A42F703538D /* Pods_ShreyanshProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShreyanshProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61616F0BE82A1E949186A2 /* Pods-ShreyanshProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShreyanshProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-ShreyanshProjectTests/Pods-ShreyanshProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,16 +211,16 @@
 				E15325AF2424ABBF004756DC /* SceneDelegate.swift */,
 				E15325B12424ABBF004756DC /* ViewController.swift */,
 				E15325B32424ABBF004756DC /* Main.storyboard */,
-				E1291D58242548A6006112E6 /* RegistrationViewController.swift */,
-				E1291D5A242548B4006112E6 /* LoginViewController.swift */,
-				E12AB9C52436435F002F5DA1 /* module.swift */,
 				E196400F2424B111009F50C3 /* MainTabBar */,
 				E105ECE9242A094E001E0D02 /* Country And Language */,
+				E1C840A724728A9F0029DB7A /* Account components */,
 				E17EDB6824274A6700310BC0 /* TableViewCell */,
+				E1C840AE2472AFEB0029DB7A /* Modules */,
 				E15325B62424ABC1004756DC /* Assets.xcassets */,
 				E15325B82424ABC1004756DC /* LaunchScreen.storyboard */,
 				E15325BB2424ABC1004756DC /* Info.plist */,
-				E1C840A5247273AC0029DB7A /* MapViewController.swift */,
+				E1C840A824729BDE0029DB7A /* ListedEmployeesViewController.swift */,
+				E1C840AA24729BFB0029DB7A /* DetailsEmployeesViewController.swift */,
 			);
 			path = ShreyanshProject;
 			sourceTree = "<group>";
@@ -238,6 +252,10 @@
 				E17EDB6A24274AAC00310BC0 /* CountryTableViewCell.xib */,
 				E17EDB6D24274C8E00310BC0 /* LanguageTableViewCell.swift */,
 				E17EDB6E24274C8E00310BC0 /* LanguageTableViewCell.xib */,
+				E1C840AF2473B95C0029DB7A /* ListedTableViewCell.swift */,
+				E1C840B02473B95C0029DB7A /* ListedTableViewCell.xib */,
+				E1C840B32473C1D40029DB7A /* DetailsTableViewCell.swift */,
+				E1C840B42473C1D40029DB7A /* DetailsTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -253,6 +271,25 @@
 				E19640102424B1A2009F50C3 /* MainTabBarController.swift */,
 			);
 			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		E1C840A724728A9F0029DB7A /* Account components */ = {
+			isa = PBXGroup;
+			children = (
+				E1C840A5247273AC0029DB7A /* MapViewController.swift */,
+				E1291D5A242548B4006112E6 /* LoginViewController.swift */,
+				E1291D58242548A6006112E6 /* RegistrationViewController.swift */,
+			);
+			path = "Account components";
+			sourceTree = "<group>";
+		};
+		E1C840AE2472AFEB0029DB7A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E12AB9C52436435F002F5DA1 /* module.swift */,
+				E1C840AC2472AFD80029DB7A /* EmployeesModule.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,7 +401,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C840B62473C1D40029DB7A /* DetailsTableViewCell.xib in Resources */,
 				E105ECF1242A138C001E0D02 /* CountryListTableViewCell.xib in Resources */,
+				E1C840B22473B95C0029DB7A /* ListedTableViewCell.xib in Resources */,
 				E15325BA2424ABC1004756DC /* LaunchScreen.storyboard in Resources */,
 				E19640152424E7BF009F50C3 /* AccountTableViewCell.xib in Resources */,
 				E15325B72424ABC1004756DC /* Assets.xcassets in Resources */,
@@ -499,10 +538,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C840AB24729BFB0029DB7A /* DetailsEmployeesViewController.swift in Sources */,
 				E1291D5B242548B4006112E6 /* LoginViewController.swift in Sources */,
 				E15325B22424ABBF004756DC /* ViewController.swift in Sources */,
 				E19640082424B0D3009F50C3 /* AccountViewController.swift in Sources */,
+				E1C840A924729BDE0029DB7A /* ListedEmployeesViewController.swift in Sources */,
 				E19640112424B1A2009F50C3 /* MainTabBarController.swift in Sources */,
+				E1C840B52473C1D40029DB7A /* DetailsTableViewCell.swift in Sources */,
 				E1291D59242548A6006112E6 /* RegistrationViewController.swift in Sources */,
 				E19640142424E7BF009F50C3 /* AccountTableViewCell.swift in Sources */,
 				E105ECF0242A138C001E0D02 /* CountryListTableViewCell.swift in Sources */,
@@ -510,8 +552,10 @@
 				E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */,
 				E196400C2424B0F3009F50C3 /* ChatViewController.swift in Sources */,
 				E17EDB6B24274AAC00310BC0 /* CountryTableViewCell.swift in Sources */,
+				E1C840AD2472AFD80029DB7A /* EmployeesModule.swift in Sources */,
 				E15325B02424ABBF004756DC /* SceneDelegate.swift in Sources */,
 				E105ECE4242A0922001E0D02 /* CountryAndLanguageViewController.swift in Sources */,
+				E1C840B12473B95C0029DB7A /* ListedTableViewCell.swift in Sources */,
 				E196400A2424B0E5009F50C3 /* FavouriteViewController.swift in Sources */,
 				E196400E2424B104009F50C3 /* EmployeesViewController.swift in Sources */,
 				E105ECEC242A09EB001E0D02 /* LanguageListTableViewCell.swift in Sources */,
