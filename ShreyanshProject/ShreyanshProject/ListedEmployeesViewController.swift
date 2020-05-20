@@ -61,18 +61,18 @@ class ListedEmployeesViewController: UIViewController {
                             
                             self.listedEmployeeArray.append(
                                 Employable(
-                                    id: result["id"] as? String,
-                                    employee_name: result["employee_name"] as? String,
-                                    employee_salary: result["employee_salary"] as? String,
-                                    employee_age: result["employee_age"] as? String)
+                                    id: (result["id"] as? String)!,
+                                    employeeName: (result["employee_name"] as? String)!,
+                                    employeeSalary: (result["employee_salary"] as? String)!,
+                                    employeeAge: (result["employee_age"] as? String)!)
                                     )
                         }
                         
                         for item in self.listedEmployeeArray {
-                            print(item.id!)
-                            print(item.employee_name!)
-                            print(item.employee_age!)
-                            print(item.employee_salary!)
+                            print(item.id)
+                            print(item.employeeName)
+                            print(item.employeeAge)
+                            print(item.employeeSalary)
                             
                             print("------------------------------")
                         }
@@ -105,7 +105,7 @@ extension ListedEmployeesViewController: UITableViewDelegate, UITableViewDataSou
         
         let cell = listedTableView.dequeueReusableCell(withIdentifier: "ListedCell", for: indexPath) as! ListedTableViewCell
         
-        cell.textLabel?.text = listedEmployeeArray[indexPath.row].employee_name
+        cell.textLabel?.text = listedEmployeeArray[indexPath.row].employeeName
         cell.textLabel?.textAlignment = .center
         
         return cell

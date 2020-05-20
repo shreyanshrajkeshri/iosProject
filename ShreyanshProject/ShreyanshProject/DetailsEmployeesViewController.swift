@@ -61,18 +61,18 @@ class DetailsEmployeesViewController: UIViewController {
                             
                             self.detailsEmployeeArray.append(
                                 Employable(
-                                    id: result["id"] as? String,
-                                    employee_name: result["employee_name"] as? String,
-                                    employee_salary: result["employee_salary"] as? String,
-                                    employee_age: result["employee_age"] as? String)
+                                    id: (result["id"] as? String)!,
+                                    employeeName: (result["employee_name"] as? String)!,
+                                    employeeSalary: (result["employee_salary"] as? String)!,
+                                    employeeAge: (result["employee_age"] as? String)!)
                                     )
                         }
                         
                         for item in self.detailsEmployeeArray {
-                            print(item.id!)
-                            print(item.employee_name!)
-                            print(item.employee_age!)
-                            print(item.employee_salary!)
+                            print(item.id)
+                            print(item.employeeName)
+                            print(item.employeeAge)
+                            print(item.employeeSalary)
                             
                             print("------------------------------")
                         }
@@ -105,9 +105,9 @@ extension DetailsEmployeesViewController: UITableViewDelegate, UITableViewDataSo
         
         let cell = detailsTableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath) as! DetailsTableViewCell
         
-        cell.firstLabel.text = "\(detailsEmployeeArray[indexPath.row].employee_name!)  •  \(detailsEmployeeArray[indexPath.row].employee_age!)"
+        cell.firstLabel.text = "\(detailsEmployeeArray[indexPath.row].employeeName)  •  \(detailsEmployeeArray[indexPath.row].employeeAge)"
         
-        cell.secondLabel.text = "ID : \(detailsEmployeeArray[indexPath.row].id!)  Salary : ₹ \(detailsEmployeeArray[indexPath.row].employee_salary!) "
+        cell.secondLabel.text = "ID : \(detailsEmployeeArray[indexPath.row].id)  Salary : ₹ \(detailsEmployeeArray[indexPath.row].employeeSalary) "
         
         return cell
         
