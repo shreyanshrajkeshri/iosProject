@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class DetailsEmployeesViewController: UIViewController {
     
@@ -44,52 +45,17 @@ class DetailsEmployeesViewController: UIViewController {
     
     
     func getEmployeeData(completionHandler: @escaping () -> ()) {
-            
-        guard let url = URL(string: "http://dummy.restapiexample.com/api/v1/employees") else { return }
+        let request = AF.request("http://dummy.restapiexample.com/api/v1/employees")
         
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        request.responseDecodable(of: EmployeeResults.self) { (response) in
+          
+            guard let employeeData = response.value else { return }
+            self.detailsEmployeeArray = employeeData.data
             
-            if let data = data {
-                
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
-                    
-                    if let results = json!["data"] as? [[String:Any]] {
-                        
-                        for result in results {
-                            
-                            self.detailsEmployeeArray.append(
-                                Employable(
-                                    id: (result["id"] as? String)!,
-                                    employeeName: (result["employee_name"] as? String)!,
-                                    employeeSalary: (result["employee_salary"] as? String)!,
-                                    employeeAge: (result["employee_age"] as? String)!)
-                                    )
-                        }
-                        
-                        for item in self.detailsEmployeeArray {
-                            print(item.id)
-                            print(item.employeeName)
-                            print(item.employeeAge)
-                            print(item.employeeSalary)
-                            
-                            print("------------------------------")
-                        }
-                        
-                        DispatchQueue.main.async {
-                            completionHandler()
-                        }
-                    }
-                    
-                } catch {
-                    print("JSON Error")
-                }
-            }
-            
-        }.resume()
-            
+            completionHandler()
+        }
     }
+    
     
 
 }

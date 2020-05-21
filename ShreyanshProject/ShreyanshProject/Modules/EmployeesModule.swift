@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 struct Employable: Codable {
     
@@ -24,3 +25,7 @@ struct Employable: Codable {
     
 }
 
+struct EmployeeResults: Decodable {
+    var status: String
+    var data: [Employable]
+}

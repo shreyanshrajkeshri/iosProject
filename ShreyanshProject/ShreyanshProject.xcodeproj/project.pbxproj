@@ -46,6 +46,7 @@
 		E1C840B62473C1D40029DB7A /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C840B42473C1D40029DB7A /* DetailsTableViewCell.xib */; };
 		E1CA9174247508830005D2FF /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA9172247508830005D2FF /* SliderCollectionViewCell.swift */; };
 		E1CA9175247508830005D2FF /* SliderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CA9173247508830005D2FF /* SliderCollectionViewCell.xib */; };
+		E1CA917A247559390005D2FF /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA9179247559390005D2FF /* HomeModule.swift */; };
 		E2E9F053DA324E335AF930DD /* Pods_ShreyanshProject_ShreyanshProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C6542A9903E8A1368AC94E /* Pods_ShreyanshProject_ShreyanshProjectUITests.framework */; };
 		EFCF0AD8B8C55168BE6C3935 /* Pods_ShreyanshProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095F41F03FC80D78A7AB16D2 /* Pods_ShreyanshProject.framework */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		E1C840B42473C1D40029DB7A /* DetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsTableViewCell.xib; sourceTree = "<group>"; };
 		E1CA9172247508830005D2FF /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1CA9173247508830005D2FF /* SliderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCollectionViewCell.xib; sourceTree = "<group>"; };
+		E1CA9179247559390005D2FF /* HomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		E3C3E2CC0FA22A42F703538D /* Pods_ShreyanshProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShreyanshProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61616F0BE82A1E949186A2 /* Pods-ShreyanshProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShreyanshProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-ShreyanshProjectTests/Pods-ShreyanshProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -293,6 +295,7 @@
 			children = (
 				E12AB9C52436435F002F5DA1 /* module.swift */,
 				E1C840AC2472AFD80029DB7A /* EmployeesModule.swift */,
+				E1CA9179247559390005D2FF /* HomeModule.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				E15325A72424ABBF004756DC /* Frameworks */,
 				E15325A82424ABBF004756DC /* Resources */,
 				E400D44CFEC85DCA24005D38 /* [CP] Copy Pods Resources */,
+				BFFA30EB296B2D2804868088 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -356,6 +360,7 @@
 				E15325C82424ABC1004756DC /* Frameworks */,
 				E15325C92424ABC1004756DC /* Resources */,
 				3DA10A192D20E86402FC3117 /* [CP] Copy Pods Resources */,
+				2DA91AFF0E186689EFDD9499 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,6 +451,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2DA91AFF0E186689EFDD9499 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShreyanshProject-ShreyanshProjectUITests/Pods-ShreyanshProject-ShreyanshProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShreyanshProject-ShreyanshProjectUITests/Pods-ShreyanshProject-ShreyanshProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShreyanshProject-ShreyanshProjectUITests/Pods-ShreyanshProject-ShreyanshProjectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3DA10A192D20E86402FC3117 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +505,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFFA30EB296B2D2804868088 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShreyanshProject/Pods-ShreyanshProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShreyanshProject/Pods-ShreyanshProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShreyanshProject/Pods-ShreyanshProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C5743251E0AD92B05A735F75 /* [CP] Check Pods Manifest.lock */ = {
@@ -553,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CA917A247559390005D2FF /* HomeModule.swift in Sources */,
 				E1CA9174247508830005D2FF /* SliderCollectionViewCell.swift in Sources */,
 				E1C840AB24729BFB0029DB7A /* DetailsEmployeesViewController.swift in Sources */,
 				E1291D5B242548B4006112E6 /* LoginViewController.swift in Sources */,
