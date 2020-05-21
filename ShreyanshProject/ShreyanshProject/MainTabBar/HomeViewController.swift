@@ -12,85 +12,45 @@ import AlamofireImage
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var sliderCollectionView: UICollectionView!
-    @IBOutlet weak var pageViewControl: UIPageControl!
+    @IBOutlet weak var homeTableView: UITableView!
     
         
-    var trandingArray = [Tranding]()
+    var trandingArray = [Trending]()
     
-    var timer = Timer()
-    var counter = 0
-    
+    var moviename = [nil, "Action", "Drama", "Science Fiction", "Kids", "Horror"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        sliderCollectionView.delegate = self
-        sliderCollectionView.dataSource = self
-        
-        let nib = UINib(nibName: "SliderCollectionViewCell", bundle: nil)
-        sliderCollectionView.register(nib, forCellWithReuseIdentifier: "SliderCollectionCell")
-        
-        
-//        pageViewControl.numberOfPages = trandingArray.count
-//        pageViewControl.currentPage = 0
-//
-        DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
-        }
-        
-        getTrandingData()
        
-        let searchBar = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchButtonAction(sender:)))
-    
-        navigationItem.rightBarButtonItems = [searchBar]
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
+        
+        setupNIb()
+        
+        setButtonOnNavigationBar()
+
  
     }
     
-    
-    @objc func changeImage() {
+    func setupNIb() {
         
-        if counter<trandingArray.count {
-         
-            let index = IndexPath(item: counter, section: 0)
-            self.sliderCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-            pageViewControl.currentPage = counter
-            counter += 1
-        }
-        else {
-            
-            counter = 0
-            let index = IndexPath(item: counter, section: 0)
-            self.sliderCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
-            pageViewControl.currentPage = counter
-            counter = 1
-        }
+        let nib1 = UINib(nibName: "HomeTableViewCell", bundle: nil)
+        homeTableView.register(nib1, forCellReuseIdentifier: "HomeTableCell")
         
+        let nib2 = UINib(nibName: "ImagesSliderTableViewCell", bundle: nil)
+        homeTableView.register(nib2, forCellReuseIdentifier: "ImagesSliderTableCell")
     }
     
-    func getTrandingData() {
+    func setButtonOnNavigationBar() {
         
-        let request = AF.request("https://api.themoviedb.org/3/trending/all/day?api_key=\(TMDBApiKey)")
+        let searchBar = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchButtonAction(sender:)))
         
-        request.responseDecodable(of: TrandingResults.self) { (response) in
-          
-            guard let trandingData = response.value else { return }
-            
-            DispatchQueue.main.async {
-
-                self.trandingArray = trandingData.results
-
-                for i in self.trandingArray {
-                    print("Poster : \(i.posterImage)")
-                }
-
-                self.sliderCollectionView.reloadData()
-            }
-        }
-        
+            navigationItem.rightBarButtonItems = [searchBar]
     }
+    
     
     @objc func notificationButtonAction(sender: AnyObject){
         print("Notification")
@@ -103,34 +63,45 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trandingArray.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = sliderCollectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionCell", for: indexPath) as! SliderCollectionViewCell
-        
-        
-    AF.request("https://image.tmdb.org/t/p/w500\(trandingArray[indexPath.row].posterImage)").responseImage { response in
-            
-            if case .success(let image) = response.result {
-                cell.sliderImageView.image = image
-            }
-        }
-  
-        return cell
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           
-           return CGSize(width: view.frame.width, height: 250)
-       }
-       
-   
-}
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if (indexPath.section == 0) {
+            
+            let cell2 = homeTableView.dequeueReusableCell(withIdentifier: "ImagesSliderTableCell", for: indexPath) as! ImagesSliderTableViewCell
+            
+            return cell2
+        }
+        
+        else {
+            let cell = homeTableView.dequeueReusableCell(withIdentifier: "HomeTableCell", for: indexPath) as! HomeTableViewCell
+        
+            return cell
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return moviename.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       return moviename[section]
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            return 300
+        }
+        
+        return 170
+    }
+    
+}
 

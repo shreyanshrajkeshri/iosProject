@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesSliderTableCell" id="KGk-i7-Jjw" customClass="ImagesSliderTableViewCell" customModule="ShreyanshProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NIg-l6-BIP">
+                        <rect key="frame" x="5" y="5" width="405" height="250"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="250" id="tEk-pQ-fht"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ejh-Z4-0MF">
+                            <size key="itemSize" width="400" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="20" translatesAutoresizingMaskIntoConstraints="NO" id="tXi-S0-GUN">
+                        <rect key="frame" x="30" y="260" width="355" height="35"/>
+                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </pageControl>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tXi-S0-GUN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="OV1-tc-Qw9"/>
+                    <constraint firstAttribute="trailing" secondItem="NIg-l6-BIP" secondAttribute="trailing" constant="5" id="SDm-bG-sBA"/>
+                    <constraint firstItem="NIg-l6-BIP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="bQV-cU-DdD"/>
+                    <constraint firstAttribute="trailing" secondItem="tXi-S0-GUN" secondAttribute="trailing" constant="30" id="cEo-Nd-2eZ"/>
+                    <constraint firstItem="tXi-S0-GUN" firstAttribute="top" secondItem="NIg-l6-BIP" secondAttribute="bottom" constant="5" id="jct-0V-iK7"/>
+                    <constraint firstAttribute="bottom" secondItem="tXi-S0-GUN" secondAttribute="bottom" constant="5" id="xXM-Fo-tjE"/>
+                    <constraint firstItem="NIg-l6-BIP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="y3x-yv-w6W"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="pageViewController" destination="tXi-S0-GUN" id="f5a-Cj-WVO"/>
+                <outlet property="sliderCollectionView" destination="NIg-l6-BIP" id="ZaP-GF-EW4"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="125"/>
+        </tableViewCell>
+    </objects>
+</document>

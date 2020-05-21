@@ -11,7 +11,7 @@ import Foundation
 let TMDBApiKey = "7b3f0b08ae42d8a4b702665de755b051"
 
 
-struct Tranding: Codable {
+struct Trending: Codable {
     
     let posterImage: String
     
@@ -22,10 +22,10 @@ struct Tranding: Codable {
     
 }
 
-struct TrandingResults: Decodable {
+struct TrendingResults: Decodable {
     
     var page: Int
-    var results: [Tranding]
+    var results: [Trending]
     var totalPages: Int
     var totalResults: Int
     
