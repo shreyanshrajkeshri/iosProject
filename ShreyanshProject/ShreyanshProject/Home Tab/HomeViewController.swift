@@ -31,7 +31,6 @@ class HomeViewController: UIViewController {
         setupNIb()
         
         setButtonOnNavigationBar()
-
  
     }
     
@@ -100,7 +99,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 300
         }
         
-        return 170
+        return 220
     }
     
 }

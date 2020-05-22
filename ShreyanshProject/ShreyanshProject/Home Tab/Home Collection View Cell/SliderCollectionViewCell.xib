@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="415" height="250"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButanFlag" translatesAutoresizingMaskIntoConstraints="NO" id="bvz-xM-p53">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bvz-xM-p53">
                         <rect key="frame" x="10" y="10" width="395" height="230"/>
                     </imageView>
                 </subviews>
@@ -35,7 +35,4 @@
             <point key="canvasLocation" x="323.91304347826087" y="154.35267857142856"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="ButanFlag" width="1000" height="666.5"/>
-    </resources>
 </document>

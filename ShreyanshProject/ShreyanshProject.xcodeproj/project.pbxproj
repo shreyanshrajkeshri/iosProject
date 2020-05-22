@@ -229,19 +229,14 @@
 				E15325AF2424ABBF004756DC /* SceneDelegate.swift */,
 				E15325B12424ABBF004756DC /* ViewController.swift */,
 				E15325B32424ABBF004756DC /* Main.storyboard */,
+				E1CA918D2477A9670005D2FF /* Home Tab */,
+				E1CA91912477AA5A0005D2FF /* Employee Tab */,
+				E1CA918E2477A9B30005D2FF /* Account Tab */,
 				E196400F2424B111009F50C3 /* MainTabBar */,
-				E105ECE9242A094E001E0D02 /* Country And Language */,
-				E1C840A724728A9F0029DB7A /* Account components */,
-				E17EDB6824274A6700310BC0 /* TableViewCell */,
-				E1CA91762475088B0005D2FF /* CollectionViewCell */,
 				E1C840AE2472AFEB0029DB7A /* Modules */,
 				E15325B62424ABC1004756DC /* Assets.xcassets */,
 				E15325B82424ABC1004756DC /* LaunchScreen.storyboard */,
 				E15325BB2424ABC1004756DC /* Info.plist */,
-				E1C840A824729BDE0029DB7A /* ListedEmployeesViewController.swift */,
-				E1C840AA24729BFB0029DB7A /* DetailsEmployeesViewController.swift */,
-				E1CA91892476B8530005D2FF /* ImagesSliderTableViewCell.swift */,
-				E1CA918A2476B8530005D2FF /* ImagesSliderTableViewCell.xib */,
 			);
 			path = ShreyanshProject;
 			sourceTree = "<group>";
@@ -264,33 +259,22 @@
 			path = ShreyanshProjectUITests;
 			sourceTree = "<group>";
 		};
-		E17EDB6824274A6700310BC0 /* TableViewCell */ = {
+		E17EDB6824274A6700310BC0 /* Employee Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
-				E19640122424E7BF009F50C3 /* AccountTableViewCell.swift */,
-				E19640132424E7BF009F50C3 /* AccountTableViewCell.xib */,
-				E17EDB6924274AAC00310BC0 /* CountryTableViewCell.swift */,
-				E17EDB6A24274AAC00310BC0 /* CountryTableViewCell.xib */,
-				E17EDB6D24274C8E00310BC0 /* LanguageTableViewCell.swift */,
-				E17EDB6E24274C8E00310BC0 /* LanguageTableViewCell.xib */,
 				E1C840AF2473B95C0029DB7A /* ListedTableViewCell.swift */,
 				E1C840B02473B95C0029DB7A /* ListedTableViewCell.xib */,
 				E1C840B32473C1D40029DB7A /* DetailsTableViewCell.swift */,
 				E1C840B42473C1D40029DB7A /* DetailsTableViewCell.xib */,
-				E1CA917D247670510005D2FF /* HomeTableViewCell.swift */,
-				E1CA917E247670510005D2FF /* HomeTableViewCell.xib */,
 			);
-			path = TableViewCell;
+			path = "Employee Table View Cell";
 			sourceTree = "<group>";
 		};
 		E196400F2424B111009F50C3 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				E19640052424B0C7009F50C3 /* HomeViewController.swift */,
-				E19640072424B0D3009F50C3 /* AccountViewController.swift */,
 				E19640092424B0E5009F50C3 /* FavouriteViewController.swift */,
 				E196400B2424B0F3009F50C3 /* ChatViewController.swift */,
-				E196400D2424B104009F50C3 /* EmployeesViewController.swift */,
 				E19640102424B1A2009F50C3 /* MainTabBarController.swift */,
 			);
 			path = MainTabBar;
@@ -310,13 +294,11 @@
 			isa = PBXGroup;
 			children = (
 				E12AB9C52436435F002F5DA1 /* module.swift */,
-				E1C840AC2472AFD80029DB7A /* EmployeesModule.swift */,
-				E1CA9179247559390005D2FF /* HomeModule.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		E1CA91762475088B0005D2FF /* CollectionViewCell */ = {
+		E1CA91762475088B0005D2FF /* Home Collection View Cell */ = {
 			isa = PBXGroup;
 			children = (
 				E1CA9172247508830005D2FF /* SliderCollectionViewCell.swift */,
@@ -324,7 +306,65 @@
 				E1CA918124769D7F0005D2FF /* HomeCollectionViewCell.swift */,
 				E1CA918224769D7F0005D2FF /* HomeCollectionViewCell.xib */,
 			);
-			path = CollectionViewCell;
+			path = "Home Collection View Cell";
+			sourceTree = "<group>";
+		};
+		E1CA918D2477A9670005D2FF /* Home Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E19640052424B0C7009F50C3 /* HomeViewController.swift */,
+				E1CA9179247559390005D2FF /* HomeModule.swift */,
+				E1CA918F2477A9EE0005D2FF /* Home Table View Cell */,
+				E1CA91762475088B0005D2FF /* Home Collection View Cell */,
+			);
+			path = "Home Tab";
+			sourceTree = "<group>";
+		};
+		E1CA918E2477A9B30005D2FF /* Account Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E19640072424B0D3009F50C3 /* AccountViewController.swift */,
+				E1CA91902477AA2F0005D2FF /* Account Table View Cell */,
+				E105ECE9242A094E001E0D02 /* Country And Language */,
+				E1C840A724728A9F0029DB7A /* Account components */,
+			);
+			path = "Account Tab";
+			sourceTree = "<group>";
+		};
+		E1CA918F2477A9EE0005D2FF /* Home Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA917D247670510005D2FF /* HomeTableViewCell.swift */,
+				E1CA917E247670510005D2FF /* HomeTableViewCell.xib */,
+				E1CA91892476B8530005D2FF /* ImagesSliderTableViewCell.swift */,
+				E1CA918A2476B8530005D2FF /* ImagesSliderTableViewCell.xib */,
+			);
+			path = "Home Table View Cell";
+			sourceTree = "<group>";
+		};
+		E1CA91902477AA2F0005D2FF /* Account Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E19640122424E7BF009F50C3 /* AccountTableViewCell.swift */,
+				E19640132424E7BF009F50C3 /* AccountTableViewCell.xib */,
+				E17EDB6924274AAC00310BC0 /* CountryTableViewCell.swift */,
+				E17EDB6A24274AAC00310BC0 /* CountryTableViewCell.xib */,
+				E17EDB6D24274C8E00310BC0 /* LanguageTableViewCell.swift */,
+				E17EDB6E24274C8E00310BC0 /* LanguageTableViewCell.xib */,
+			);
+			path = "Account Table View Cell";
+			sourceTree = "<group>";
+		};
+		E1CA91912477AA5A0005D2FF /* Employee Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E196400D2424B104009F50C3 /* EmployeesViewController.swift */,
+				E1C840A824729BDE0029DB7A /* ListedEmployeesViewController.swift */,
+				E1C840AA24729BFB0029DB7A /* DetailsEmployeesViewController.swift */,
+				E1C840AC2472AFD80029DB7A /* EmployeesModule.swift */,
+				E17EDB6824274A6700310BC0 /* Employee Table View Cell */,
+			);
+			path = "Employee Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
