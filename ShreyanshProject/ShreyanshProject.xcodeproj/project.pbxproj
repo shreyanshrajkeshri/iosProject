@@ -53,6 +53,9 @@
 		E1CA918424769D7F0005D2FF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CA918224769D7F0005D2FF /* HomeCollectionViewCell.xib */; };
 		E1CA918B2476B8530005D2FF /* ImagesSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA91892476B8530005D2FF /* ImagesSliderTableViewCell.swift */; };
 		E1CA918C2476B8530005D2FF /* ImagesSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CA918A2476B8530005D2FF /* ImagesSliderTableViewCell.xib */; };
+		E1CA919324780ED10005D2FF /* ShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA919224780ED10005D2FF /* ShowDetailsViewController.swift */; };
+		E1CA91962479434E0005D2FF /* MovieDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA91942479434E0005D2FF /* MovieDetailsCollectionViewCell.swift */; };
+		E1CA91972479434E0005D2FF /* MovieDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CA91952479434E0005D2FF /* MovieDetailsCollectionViewCell.xib */; };
 		E2E9F053DA324E335AF930DD /* Pods_ShreyanshProject_ShreyanshProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C6542A9903E8A1368AC94E /* Pods_ShreyanshProject_ShreyanshProjectUITests.framework */; };
 		EFCF0AD8B8C55168BE6C3935 /* Pods_ShreyanshProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095F41F03FC80D78A7AB16D2 /* Pods_ShreyanshProject.framework */; };
 /* End PBXBuildFile section */
@@ -133,6 +136,9 @@
 		E1CA918224769D7F0005D2FF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1CA91892476B8530005D2FF /* ImagesSliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesSliderTableViewCell.swift; sourceTree = "<group>"; };
 		E1CA918A2476B8530005D2FF /* ImagesSliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesSliderTableViewCell.xib; sourceTree = "<group>"; };
+		E1CA919224780ED10005D2FF /* ShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewController.swift; sourceTree = "<group>"; };
+		E1CA91942479434E0005D2FF /* MovieDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1CA91952479434E0005D2FF /* MovieDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
 		E3C3E2CC0FA22A42F703538D /* Pods_ShreyanshProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShreyanshProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61616F0BE82A1E949186A2 /* Pods-ShreyanshProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShreyanshProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-ShreyanshProjectTests/Pods-ShreyanshProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +237,8 @@
 				E15325B32424ABBF004756DC /* Main.storyboard */,
 				E1CA918D2477A9670005D2FF /* Home Tab */,
 				E1CA91912477AA5A0005D2FF /* Employee Tab */,
+				E1CA9198247CFB800005D2FF /* Favourite Tab */,
+				E1CA9199247CFB8E0005D2FF /* Chat Tab */,
 				E1CA918E2477A9B30005D2FF /* Account Tab */,
 				E196400F2424B111009F50C3 /* MainTabBar */,
 				E1C840AE2472AFEB0029DB7A /* Modules */,
@@ -273,8 +281,6 @@
 		E196400F2424B111009F50C3 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				E19640092424B0E5009F50C3 /* FavouriteViewController.swift */,
-				E196400B2424B0F3009F50C3 /* ChatViewController.swift */,
 				E19640102424B1A2009F50C3 /* MainTabBarController.swift */,
 			);
 			path = MainTabBar;
@@ -305,6 +311,8 @@
 				E1CA9173247508830005D2FF /* SliderCollectionViewCell.xib */,
 				E1CA918124769D7F0005D2FF /* HomeCollectionViewCell.swift */,
 				E1CA918224769D7F0005D2FF /* HomeCollectionViewCell.xib */,
+				E1CA91942479434E0005D2FF /* MovieDetailsCollectionViewCell.swift */,
+				E1CA91952479434E0005D2FF /* MovieDetailsCollectionViewCell.xib */,
 			);
 			path = "Home Collection View Cell";
 			sourceTree = "<group>";
@@ -314,6 +322,7 @@
 			children = (
 				E19640052424B0C7009F50C3 /* HomeViewController.swift */,
 				E1CA9179247559390005D2FF /* HomeModule.swift */,
+				E1CA919224780ED10005D2FF /* ShowDetailsViewController.swift */,
 				E1CA918F2477A9EE0005D2FF /* Home Table View Cell */,
 				E1CA91762475088B0005D2FF /* Home Collection View Cell */,
 			);
@@ -365,6 +374,22 @@
 				E17EDB6824274A6700310BC0 /* Employee Table View Cell */,
 			);
 			path = "Employee Tab";
+			sourceTree = "<group>";
+		};
+		E1CA9198247CFB800005D2FF /* Favourite Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E19640092424B0E5009F50C3 /* FavouriteViewController.swift */,
+			);
+			path = "Favourite Tab";
+			sourceTree = "<group>";
+		};
+		E1CA9199247CFB8E0005D2FF /* Chat Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E196400B2424B0F3009F50C3 /* ChatViewController.swift */,
+			);
+			path = "Chat Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +513,7 @@
 				E15325B52424ABBF004756DC /* Main.storyboard in Resources */,
 				E17EDB6C24274AAC00310BC0 /* CountryTableViewCell.xib in Resources */,
 				E17EDB7024274C8E00310BC0 /* LanguageTableViewCell.xib in Resources */,
+				E1CA91972479434E0005D2FF /* MovieDetailsCollectionViewCell.xib in Resources */,
 				E1CA9180247670510005D2FF /* HomeTableViewCell.xib in Resources */,
 				E1CA918424769D7F0005D2FF /* HomeCollectionViewCell.xib in Resources */,
 				E1CA918C2476B8530005D2FF /* ImagesSliderTableViewCell.xib in Resources */,
@@ -669,6 +695,8 @@
 				E1C840A6247273AC0029DB7A /* MapViewController.swift in Sources */,
 				E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */,
 				E196400C2424B0F3009F50C3 /* ChatViewController.swift in Sources */,
+				E1CA919324780ED10005D2FF /* ShowDetailsViewController.swift in Sources */,
+				E1CA91962479434E0005D2FF /* MovieDetailsCollectionViewCell.swift in Sources */,
 				E1CA917F247670510005D2FF /* HomeTableViewCell.swift in Sources */,
 				E1CA918B2476B8530005D2FF /* ImagesSliderTableViewCell.swift in Sources */,
 				E17EDB6B24274AAC00310BC0 /* CountryTableViewCell.swift in Sources */,

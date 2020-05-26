@@ -79,10 +79,6 @@ class ImagesSliderTableViewCell: UITableViewCell {
 
                 self.trendingArray = trendingData.results
 
-                for i in self.trendingArray {
-                    print("Poster : \(i.posterImage)")
-                }
-
                 self.sliderCollectionView.reloadData()
             }
         }

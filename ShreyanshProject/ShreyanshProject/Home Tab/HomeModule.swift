@@ -46,23 +46,41 @@ struct TrendingResults: Decodable {
 }
 
 
-struct Popularity: Codable {
+
+
+struct Movies: Codable {
     
     let posterImage: String
     let title: String
     let rating: Double
+    let movieImage: String
+    let description: String
+    let releaseDate: String
+    
+    init() {
+        posterImage = ""
+        title = ""
+        rating = 0.0
+        movieImage = ""
+        description = ""
+        releaseDate = ""
+    }
     
     enum CodingKeys: String, CodingKey {
-        case posterImage = "poster_path"
+        case posterImage = "backdrop_path"
         case title
         case rating = "vote_average"
+        case movieImage = "poster_path"
+        case description = "overview"
+        case releaseDate = "release_date"
     }
 }
 
-struct PopularityResults: Decodable {
+
+struct MoviesResults: Decodable {
     
     var page: Int
-    var results: [Popularity]
+    var results: [Movies]
     var totalPages: Int
     var totalResults: Int
     

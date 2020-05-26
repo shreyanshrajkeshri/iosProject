@@ -26,11 +26,11 @@
                                 <rect key="frame" x="0.0" y="120" width="240" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE LION KING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omH-nO-6nB">
-                                        <rect key="frame" x="10" y="10" width="180" height="18"/>
+                                        <rect key="frame" x="10" y="10" width="180" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="aua-EC-Qrt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -42,7 +42,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action &amp; Adventures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUk-uI-nHY">
-                                        <rect key="frame" x="10" y="33" width="180" height="14.5"/>
+                                        <rect key="frame" x="10" y="32" width="180" height="14.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="ZM5-CA-ngk"/>
                                         </constraints>
@@ -68,7 +68,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="swd-CM-HYh" secondAttribute="bottom" constant="8" id="11L-hz-85s"/>
                                     <constraint firstAttribute="trailing" secondItem="Xzv-Sr-aLA" secondAttribute="trailing" id="3EG-s1-g4O"/>
