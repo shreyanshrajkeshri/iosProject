@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         
     var trandingArray = [Trending]()
     
+    
     var movieTypeName = [nil, "Popular", "Drama", "Thriller", "Comedy", "Horror"]
 
     
@@ -34,6 +35,29 @@ class HomeViewController: UIViewController {
  
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        updateDataInVisibleCell()
+    }
+    
+    
+    func updateDataInVisibleCell() {
+        
+        for cell in homeTableView.visibleCells {
+            let indexPath = homeTableView.indexPath(for: cell)
+            print("Table View : ====> \(indexPath!)")
+            let indexSet = indexPath!
+            
+            let cell = homeTableView.dequeueReusableCell(withIdentifier: "HomeTableCell", for: indexPath!) as! HomeTableViewCell
+            
+            cell.getData(customIndex: indexPath!.section)
+            
+            self.homeTableView.reloadSections([indexSet.section, indexSet.row], with: .fade)
+        }
+    }
+    
+    
     func setupNIb() {
         
         let nib1 = UINib(nibName: "HomeTableViewCell", bundle: nil)
@@ -47,7 +71,7 @@ class HomeViewController: UIViewController {
         
         let searchBar = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchButtonAction(sender:)))
         
-            navigationItem.rightBarButtonItems = [searchBar]
+        navigationItem.rightBarButtonItems = [searchBar]
     }
     
     
@@ -57,6 +81,8 @@ class HomeViewController: UIViewController {
 
     @objc func searchButtonAction(sender: AnyObject){
         print("Search")
+        
+        self.homeTableView.reloadSections([1,0], with: .automatic)
     }
 
 
@@ -112,6 +138,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         print(movieTypeName[indexPath.section] ?? "MovieTypeName")
         
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        updateDataInVisibleCell()
+
+    }
+    
+    
     
 }
 

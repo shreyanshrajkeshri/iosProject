@@ -13,9 +13,13 @@
 		E105ECED242A09EB001E0D02 /* LanguageListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105ECEB242A09EB001E0D02 /* LanguageListTableViewCell.xib */; };
 		E105ECF0242A138C001E0D02 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E105ECEE242A138C001E0D02 /* CountryListTableViewCell.swift */; };
 		E105ECF1242A138C001E0D02 /* CountryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */; };
-		E1291D59242548A6006112E6 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1291D58242548A6006112E6 /* RegistrationViewController.swift */; };
-		E1291D5B242548B4006112E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1291D5A242548B4006112E6 /* LoginViewController.swift */; };
-		E12AB9C62436435F002F5DA1 /* module.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12AB9C52436435F002F5DA1 /* module.swift */; };
+		E1291D59242548A6006112E6 /* LoginAndRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1291D58242548A6006112E6 /* LoginAndRegistrationViewController.swift */; };
+		E12AB9C62436435F002F5DA1 /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12AB9C52436435F002F5DA1 /* AccountModule.swift */; };
+		E12CACDD247D78E300B7A32D /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CACDC247D78E300B7A32D /* ForgetViewController.swift */; };
+		E12CACDF247D79CE00B7A32D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CACDE247D79CE00B7A32D /* LoginViewController.swift */; };
+		E12CACE1247D79E700B7A32D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CACE0247D79E700B7A32D /* RegisterViewController.swift */; };
+		E12CACE3247E854B00B7A32D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CACE2247E854B00B7A32D /* LoginModel.swift */; };
+		E12FEC7A2481254D00F97E8A /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12FEC792481254D00F97E8A /* ResetViewController.swift */; };
 		E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325AD2424ABBF004756DC /* AppDelegate.swift */; };
 		E15325B02424ABBF004756DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325AF2424ABBF004756DC /* SceneDelegate.swift */; };
 		E15325B22424ABBF004756DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15325B12424ABBF004756DC /* ViewController.swift */; };
@@ -90,9 +94,13 @@
 		E105ECEB242A09EB001E0D02 /* LanguageListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageListTableViewCell.xib; sourceTree = "<group>"; };
 		E105ECEE242A138C001E0D02 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
 		E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListTableViewCell.xib; sourceTree = "<group>"; };
-		E1291D58242548A6006112E6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		E1291D5A242548B4006112E6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E12AB9C52436435F002F5DA1 /* module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = module.swift; sourceTree = "<group>"; };
+		E1291D58242548A6006112E6 /* LoginAndRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegistrationViewController.swift; sourceTree = "<group>"; };
+		E12AB9C52436435F002F5DA1 /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
+		E12CACDC247D78E300B7A32D /* ForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
+		E12CACDE247D79CE00B7A32D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E12CACE0247D79E700B7A32D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E12CACE2247E854B00B7A32D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		E12FEC792481254D00F97E8A /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		E15325AA2424ABBF004756DC /* ShreyanshProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShreyanshProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15325AD2424ABBF004756DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E15325AF2424ABBF004756DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -241,7 +249,6 @@
 				E1CA9199247CFB8E0005D2FF /* Chat Tab */,
 				E1CA918E2477A9B30005D2FF /* Account Tab */,
 				E196400F2424B111009F50C3 /* MainTabBar */,
-				E1C840AE2472AFEB0029DB7A /* Modules */,
 				E15325B62424ABC1004756DC /* Assets.xcassets */,
 				E15325B82424ABC1004756DC /* LaunchScreen.storyboard */,
 				E15325BB2424ABC1004756DC /* Info.plist */,
@@ -290,18 +297,14 @@
 			isa = PBXGroup;
 			children = (
 				E1C840A5247273AC0029DB7A /* MapViewController.swift */,
-				E1291D5A242548B4006112E6 /* LoginViewController.swift */,
-				E1291D58242548A6006112E6 /* RegistrationViewController.swift */,
+				E12CACDC247D78E300B7A32D /* ForgetViewController.swift */,
+				E1291D58242548A6006112E6 /* LoginAndRegistrationViewController.swift */,
+				E12CACDE247D79CE00B7A32D /* LoginViewController.swift */,
+				E12CACE0247D79E700B7A32D /* RegisterViewController.swift */,
+				E12CACE2247E854B00B7A32D /* LoginModel.swift */,
+				E12FEC792481254D00F97E8A /* ResetViewController.swift */,
 			);
 			path = "Account components";
-			sourceTree = "<group>";
-		};
-		E1C840AE2472AFEB0029DB7A /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				E12AB9C52436435F002F5DA1 /* module.swift */,
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		E1CA91762475088B0005D2FF /* Home Collection View Cell */ = {
@@ -333,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				E19640072424B0D3009F50C3 /* AccountViewController.swift */,
+				E12AB9C52436435F002F5DA1 /* AccountModule.swift */,
 				E1CA91902477AA2F0005D2FF /* Account Table View Cell */,
 				E105ECE9242A094E001E0D02 /* Country And Language */,
 				E1C840A724728A9F0029DB7A /* Account components */,
@@ -682,32 +686,36 @@
 				E1CA917A247559390005D2FF /* HomeModule.swift in Sources */,
 				E1CA9174247508830005D2FF /* SliderCollectionViewCell.swift in Sources */,
 				E1C840AB24729BFB0029DB7A /* DetailsEmployeesViewController.swift in Sources */,
-				E1291D5B242548B4006112E6 /* LoginViewController.swift in Sources */,
 				E15325B22424ABBF004756DC /* ViewController.swift in Sources */,
 				E19640082424B0D3009F50C3 /* AccountViewController.swift in Sources */,
 				E1C840A924729BDE0029DB7A /* ListedEmployeesViewController.swift in Sources */,
 				E1CA918324769D7F0005D2FF /* HomeCollectionViewCell.swift in Sources */,
 				E19640112424B1A2009F50C3 /* MainTabBarController.swift in Sources */,
 				E1C840B52473C1D40029DB7A /* DetailsTableViewCell.swift in Sources */,
-				E1291D59242548A6006112E6 /* RegistrationViewController.swift in Sources */,
+				E1291D59242548A6006112E6 /* LoginAndRegistrationViewController.swift in Sources */,
 				E19640142424E7BF009F50C3 /* AccountTableViewCell.swift in Sources */,
 				E105ECF0242A138C001E0D02 /* CountryListTableViewCell.swift in Sources */,
+				E12CACE1247D79E700B7A32D /* RegisterViewController.swift in Sources */,
+				E12CACDF247D79CE00B7A32D /* LoginViewController.swift in Sources */,
 				E1C840A6247273AC0029DB7A /* MapViewController.swift in Sources */,
+				E12CACDD247D78E300B7A32D /* ForgetViewController.swift in Sources */,
 				E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */,
 				E196400C2424B0F3009F50C3 /* ChatViewController.swift in Sources */,
 				E1CA919324780ED10005D2FF /* ShowDetailsViewController.swift in Sources */,
+				E12FEC7A2481254D00F97E8A /* ResetViewController.swift in Sources */,
 				E1CA91962479434E0005D2FF /* MovieDetailsCollectionViewCell.swift in Sources */,
 				E1CA917F247670510005D2FF /* HomeTableViewCell.swift in Sources */,
 				E1CA918B2476B8530005D2FF /* ImagesSliderTableViewCell.swift in Sources */,
 				E17EDB6B24274AAC00310BC0 /* CountryTableViewCell.swift in Sources */,
 				E1C840AD2472AFD80029DB7A /* EmployeesModule.swift in Sources */,
 				E15325B02424ABBF004756DC /* SceneDelegate.swift in Sources */,
+				E12CACE3247E854B00B7A32D /* LoginModel.swift in Sources */,
 				E105ECE4242A0922001E0D02 /* CountryAndLanguageViewController.swift in Sources */,
 				E1C840B12473B95C0029DB7A /* ListedTableViewCell.swift in Sources */,
 				E196400A2424B0E5009F50C3 /* FavouriteViewController.swift in Sources */,
 				E196400E2424B104009F50C3 /* EmployeesViewController.swift in Sources */,
 				E105ECEC242A09EB001E0D02 /* LanguageListTableViewCell.swift in Sources */,
-				E12AB9C62436435F002F5DA1 /* module.swift in Sources */,
+				E12AB9C62436435F002F5DA1 /* AccountModule.swift in Sources */,
 				E19640062424B0C7009F50C3 /* HomeViewController.swift in Sources */,
 				E17EDB6F24274C8E00310BC0 /* LanguageTableViewCell.swift in Sources */,
 			);
@@ -883,6 +891,7 @@
 			baseConfigurationReference = 991169DE677BCDC3D8292EB8 /* Pods-ShreyanshProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ShreyanshProject/ShreyanshProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShreyanshProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -901,6 +910,7 @@
 			baseConfigurationReference = A51ECAD667C8EDFC969AACDB /* Pods-ShreyanshProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ShreyanshProject/ShreyanshProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShreyanshProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

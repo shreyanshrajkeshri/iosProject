@@ -20,11 +20,9 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
     var customSection: Int = -1
+    var flagArray = [false, false, false, false, false]
     
-    var popularityArray = [Movies]()
-    var dramaArray = [Movies]()
-    var thrillerArray = [Movies]()
-    var comedyArray = [Movies]()
+    var moviesDetails = [[Movies]]()
     
     var delegate : CellDelegate?
 
@@ -40,10 +38,16 @@ class HomeTableViewCell: UITableViewCell {
         homeCollectionView.register(nib, forCellWithReuseIdentifier: "HomeCollectionCell")
         
         
-        getPopularityDataFromAPI()
-        getDramaDataFromAPI()
-        getThrillerDataFromAPI()
-        getComedyDataFromAPI()
+        
+        moviesDetails = [[Movies](), [Movies](), [Movies](), [Movies](), [Movies]()]
+        
+        getData(customIndex: 1)
+        getData(customIndex: 2)
+        getData(customIndex: 3)
+        getData(customIndex: 4)
+        getData(customIndex: 5)
+        
+        
         
     }
 
@@ -54,86 +58,50 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     
+    func getData(customIndex: Int) {
     
-    
-    func getPopularityDataFromAPI() {
         
-        print("getPopularityDataFromAPI")
-        
-        let request = AF.request("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=\(TMDBApiKey)")
-                
-        request.responseDecodable(of: MoviesResults.self) { (response) in
-          
-            guard let popularityData = response.value else { return }
-                        
-            DispatchQueue.main.async {
-
-                self.popularityArray = popularityData.results
-
-                self.homeCollectionView.reloadData()
-            }
-        }
-        
-    }
-    
-    func getDramaDataFromAPI() {
-        
-        let request = AF.request("https://api.themoviedb.org/3/discover/movie?with_genres=18&primary_release_year=2020&api_key=\(TMDBApiKey)")
-                
-        request.responseDecodable(of: MoviesResults.self) { (response) in
-          
-            guard let dramaData = response.value else { return }
-                        
-            DispatchQueue.main.async {
-
-                self.dramaArray = dramaData.results
-
-                self.homeCollectionView.reloadData()
-            }
+        switch customIndex {
+            
+        case 1:
+            getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=\(TMDBApiKey)", index: 0)
+        case 2:
+            getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-09-15&primary_release_date.lte=2019-10-22&api_key=\(TMDBApiKey)", index: 1)
+        case 3:
+            getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?with_genres=53&primary_release_year=2020&api_key=\(TMDBApiKey)", index: 2)
+        case 4:
+            getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=\(TMDBApiKey)", index: 3)
+        case 5:
+            getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=\(TMDBApiKey)", index: 4)
+        default:
+            print("Default")
         }
         
     }
     
     
-    func getThrillerDataFromAPI() {
-       
-        let request = AF.request("https://api.themoviedb.org/3/discover/movie?with_genres=53&primary_release_year=2020&api_key=\(TMDBApiKey)")
-     
-                
+    func getShowsFrom(url: String, index: Int) {
+        
+        print("Section :===========> \(index)")
+        
+        let request = AF.request(url)
+        
         request.responseDecodable(of: MoviesResults.self) { (response) in
-          
-            guard let thrillerData = response.value else { return }
-                        
-            DispatchQueue.main.async {
-
-                self.thrillerArray = thrillerData.results
-
-                self.homeCollectionView.reloadData()
-            }
+            
+            guard let showData = response.value else { return }
+            
+            self.moviesDetails[index] = showData.results
+            
+            self.homeCollectionView.reloadData()
         }
         
     }
-    
-    func getComedyDataFromAPI() {
-        
-        let request = AF.request("https://api.themoviedb.org/3/discover/movie?with_genres=35&primary_release_year=2020&api_key=\(TMDBApiKey)")
-                
-        request.responseDecodable(of: MoviesResults.self) { (response) in
-          
-            guard let comedyData = response.value else { return }
-                        
-            DispatchQueue.main.async {
-
-                self.comedyArray = comedyData.results
-
-                self.homeCollectionView.reloadData()
-            }
-        }
-        
-    }
-    
     
 }
+
+    
+    
+
 
 extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -141,15 +109,15 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         
         switch customSection {
         case 1:
-            return popularityArray.count
+            return moviesDetails[0].count
         case 2:
-            return dramaArray.count
+            return moviesDetails[1].count
         case 3:
-            return thrillerArray.count
+            return moviesDetails[2].count
         case 4:
-            return comedyArray.count
+            return moviesDetails[3].count
         case 5:
-            return popularityArray.count
+            return moviesDetails[4].count
         default:
             return 0
         }
@@ -164,11 +132,13 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             
         case 1:
             
-            cell.MovieNameLabel.text = popularityArray[indexPath.row].title
-            cell.movieTypeLabel.text = "Action"
-            cell.ratingLabel.text = String(popularityArray[indexPath.row].rating)
+            print( moviesDetails[0][indexPath.row].title)
             
-            AF.request("https://image.tmdb.org/t/p/w500\(popularityArray[indexPath.row].posterImage)").responseImage { response in
+            cell.MovieNameLabel.text = moviesDetails[0][indexPath.row].title
+            cell.movieTypeLabel.text = "Action"
+            cell.ratingLabel.text = String(moviesDetails[0][indexPath.row].rating)
+            
+            AF.request("https://image.tmdb.org/t/p/w500\(moviesDetails[0][indexPath.row].posterImage)").responseImage { response in
                 
                 if case .success(let image) = response.result {
                     cell.HomeCollectionImageView.image = image
@@ -177,11 +147,11 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             
         case 2:
             
-            cell.MovieNameLabel.text = dramaArray[indexPath.row].title
+            cell.MovieNameLabel.text = moviesDetails[1][indexPath.row].title
             cell.movieTypeLabel.text = "Drama"
-            cell.ratingLabel.text = String(dramaArray[indexPath.row].rating)
+            cell.ratingLabel.text = String(moviesDetails[1][indexPath.row].rating)
             
-            AF.request("https://image.tmdb.org/t/p/w500\(dramaArray[indexPath.row].posterImage)").responseImage { response in
+            AF.request("https://image.tmdb.org/t/p/w500\(moviesDetails[1][indexPath.row].posterImage)").responseImage { response in
                 
                 if case .success(let image) = response.result {
                     cell.HomeCollectionImageView.image = image
@@ -190,11 +160,11 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             
         case 3:
             
-            cell.MovieNameLabel.text = thrillerArray[indexPath.row].title
+            cell.MovieNameLabel.text =  moviesDetails[2][indexPath.row].title
             cell.movieTypeLabel.text = "Thriller"
-            cell.ratingLabel.text = String(thrillerArray[indexPath.row].rating)
+            cell.ratingLabel.text = String( moviesDetails[2][indexPath.row].rating)
             
-            AF.request("https://image.tmdb.org/t/p/w500\(thrillerArray[indexPath.row].posterImage)").responseImage { response in
+            AF.request("https://image.tmdb.org/t/p/w500\( moviesDetails[2][indexPath.row].posterImage)").responseImage { response in
                 
                 if case .success(let image) = response.result {
                     cell.HomeCollectionImageView.image = image
@@ -203,11 +173,11 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             
         case 4:
             
-            cell.MovieNameLabel.text = comedyArray[indexPath.row].title
+            cell.MovieNameLabel.text =  moviesDetails[3][indexPath.row].title
             cell.movieTypeLabel.text = "Comedy"
-            cell.ratingLabel.text = String(comedyArray[indexPath.row].rating)
+            cell.ratingLabel.text = String(moviesDetails[3][indexPath.row].rating)
             
-            AF.request("https://image.tmdb.org/t/p/w500\(comedyArray[indexPath.row].posterImage)").responseImage { response in
+            AF.request("https://image.tmdb.org/t/p/w500\(moviesDetails[3][indexPath.row].posterImage)").responseImage { response in
                 
                 if case .success(let image) = response.result {
                     cell.HomeCollectionImageView.image = image
@@ -216,11 +186,13 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
             
         case 5:
             
-            cell.MovieNameLabel.text = popularityArray[indexPath.row].title
-            cell.movieTypeLabel.text = "Action"
-            cell.ratingLabel.text = String(popularityArray[indexPath.row].rating)
+            print(moviesDetails[4][indexPath.row].title)
             
-            AF.request("https://image.tmdb.org/t/p/w500\(popularityArray[indexPath.row].posterImage)").responseImage { response in
+            cell.MovieNameLabel.text = moviesDetails[4][indexPath.row].title
+            cell.movieTypeLabel.text = "Action"
+            cell.ratingLabel.text = String(moviesDetails[4][indexPath.row].rating)
+            
+            AF.request("https://image.tmdb.org/t/p/w500\(moviesDetails[4][indexPath.row].posterImage)").responseImage { response in
                 
                 if case .success(let image) = response.result {
                     cell.HomeCollectionImageView.image = image
@@ -250,21 +222,22 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         
         switch customSection {
         case 1:
-            delegate?.colCategorySelected(indexPath, popularityArray)
+            delegate?.colCategorySelected(indexPath, moviesDetails[0])
         case 2:
-            delegate?.colCategorySelected(indexPath, dramaArray)
+            delegate?.colCategorySelected(indexPath, moviesDetails[1])
         case 3:
-            delegate?.colCategorySelected(indexPath, thrillerArray)
+            delegate?.colCategorySelected(indexPath, moviesDetails[2])
         case 4:
-            delegate?.colCategorySelected(indexPath, comedyArray)
+            delegate?.colCategorySelected(indexPath, moviesDetails[3])
         case 5:
-            delegate?.colCategorySelected(indexPath, popularityArray)
+            delegate?.colCategorySelected(indexPath, moviesDetails[4])
         default:
             print("Defalut")
         }
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
         for cell in homeCollectionView.visibleCells {
             let indexPath = homeCollectionView.indexPath(for: cell)
             print(indexPath as Any)

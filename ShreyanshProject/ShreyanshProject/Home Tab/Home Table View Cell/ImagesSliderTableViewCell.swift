@@ -111,7 +111,7 @@ extension ImagesSliderTableViewCell: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 415, height: sliderCollectionView.frame.height)
+        return CGSize(width: UIScreen.main.bounds.width, height: sliderCollectionView.frame.height)
     }
 
     

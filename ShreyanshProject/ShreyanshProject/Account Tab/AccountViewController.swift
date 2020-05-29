@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class AccountViewController: UIViewController {
 
@@ -15,6 +16,9 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var contentViewOfStackView: UIView!
+    @IBOutlet weak var joinStackContentView: UIView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    
     
     
     //make nested array of string Type
@@ -76,7 +80,14 @@ class AccountViewController: UIViewController {
         
         accountImageVIew.isUserInteractionEnabled = true
         accountImageVIew.addGestureRecognizer(singleTap)
-
+        
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(userLoginSuccessFullyAction), name: Notification.Name("UserLoginSuccessFully"), object: nil)
+        
+        joinStackContentView.isHidden = false
+        fullNameLabel.isHidden = true
+        
     }
     
     //MARK: View Will Appear
@@ -86,26 +97,7 @@ class AccountViewController: UIViewController {
         accountTableView.reloadData()
     }
     
-    
-//    func downloadImageViaURL(urlString: String) -> UIImage {
-//
-//        var image: UIImage = #imageLiteral(resourceName: "NoImage")
-//        if let url = URL(string: urlString) {
-//            URLSession.shared.dataTask(with: url) { (data, response, error) in
-//
-//                if let data = data {
-//                    DispatchQueue.main.async {
-//                        image = UIImage(data: data) ?? image
-//                    }
-//
-//                }
-//            }.resume()
-//        }
-//
-//        return image
-//    }
-//
-    
+
     //MARK: Toast()
     
     func showToast(controller: UIViewController, message : String, seconds: Double) {
@@ -144,24 +136,51 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func signInButtonAction(_ sender: UIButton) {
-        print("RegistrationViewController")
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier: "LoginAndRegistrationViewController") as! LoginAndRegistrationViewController
         
-        //self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        
         self.navigationController?.present(vc, animated: true, completion: nil)
+        
     }
     
     @IBAction func joinButtonAction(_ sender: UIButton) {
         
-        print("LoginViewController")
-        
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier: "LoginAndRegistrationViewController") as! LoginAndRegistrationViewController
         
-        //self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        
         self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @objc func userLoginSuccessFullyAction() {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(userLogout))
+        
+        joinStackContentView.isHidden = true
+        fullNameLabel.isHidden = false
+        
+        if let retrievedName: String = KeychainWrapper.standard.string(forKey: "userName") {
+            fullNameLabel.text = retrievedName
+        }
+        
+
+        
+        
+    }
+    
+    @objc func userLogout() {
+        
+        navigationItem.rightBarButtonItem = nil
+        showToast(controller: self, message: "user Logout", seconds: 0.25)
+        
+        joinStackContentView.isHidden = false
+        fullNameLabel.isHidden = true
+
     }
    
 }
