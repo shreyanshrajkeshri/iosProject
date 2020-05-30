@@ -870,7 +870,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="loginAction:" destination="Qnx-dS-Chb" eventType="touchUpInside" id="Vm2-tp-a3y"/>
+                                                    <action selector="manualLoginAction:" destination="Qnx-dS-Chb" eventType="touchUpInside" id="Vm2-tp-a3y"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forget Password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZk-bs-aY9">
@@ -885,6 +885,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="PZ8-XS-Ryh"/>
                                                 </constraints>
                                                 <state key="normal" image="FBLogin"/>
+                                                <connections>
+                                                    <action selector="facebookLoginAction:" destination="Qnx-dS-Chb" eventType="touchUpInside" id="HxY-Io-6iW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hev-nZ-Ebj">
                                                 <rect key="frame" x="90" y="402" width="234" height="45"/>
@@ -941,6 +944,7 @@
                     </view>
                     <connections>
                         <outlet property="emailIDLoginTextField" destination="UJX-yf-UOW" id="52C-f6-zgF"/>
+                        <outlet property="facebookLoginButton" destination="qg7-H5-AHg" id="CO6-Bh-SYx"/>
                         <outlet property="forgetPasswordLabel" destination="MZk-bs-aY9" id="lAT-EK-Gbx"/>
                         <outlet property="passwordLoginTextField" destination="7Og-fp-2Vx" id="sTC-16-e5u"/>
                     </connections>
@@ -1286,6 +1290,7 @@
                             <constraint firstItem="zhs-mS-Kav" firstAttribute="top" secondItem="yUH-Xu-mkz" secondAttribute="bottom" constant="5" id="lg4-MI-iPl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zhs-mS-Kav" secondAttribute="trailing" constant="10" id="msK-n2-x4l"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="QcZ-XI-Pqz"/>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="zhs-mS-Kav" id="a74-Qw-fSC"/>

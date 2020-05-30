@@ -8,6 +8,9 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import FBSDKLoginKit
+import FirebaseAuth
+
 
 
 class LoginViewController: UIViewController {
@@ -15,12 +18,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailIDLoginTextField: UITextField!
     @IBOutlet weak var passwordLoginTextField: UITextField!
     @IBOutlet weak var forgetPasswordLabel: UILabel!
-    
+    @IBOutlet weak var facebookLoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         
         emailIDLoginTextField.becomeFirstResponder()
         
@@ -29,9 +31,21 @@ class LoginViewController: UIViewController {
         
         forgetPasswordLabel.isUserInteractionEnabled = true
         forgetPasswordLabel.addGestureRecognizer(forgetPasswordLabelTap)
+        
+        
+        
+        if let token = AccessToken.current,
+            !token.isExpired {
+            // User is logged in, do work such as go to next view controller.
+            
+            print("UserID: \(token.userID)")
+        
+        }
+        
+        
     }
     
-    @IBAction func loginAction(_ sender: UIButton) {
+    @IBAction func manualLoginAction(_ sender: UIButton) {
         
         let retrievedEmail: String? = KeychainWrapper.standard.string(forKey: "userEmail")
         let retrievedPassword: String? = KeychainWrapper.standard.string(forKey: "userPassword")
@@ -49,6 +63,43 @@ class LoginViewController: UIViewController {
         }
                 
     }
+    
+    
+    
+    @IBAction func facebookLoginAction(_ sender: UIButton) {
+        
+        let loginManager = LoginManager()
+        
+        loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+            
+            if let error = error {
+                print("Failed to login: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let accessToken = AccessToken.current else {
+                print("Failed to get access token")
+                return
+            }
+            
+            print(accessToken)
+            
+            let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+            
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+                
+                if let error = error {
+                    print("Facebook authentication with Firebase error: ", error)
+                    return
+                }
+                
+                print("Login success!")
+                
+                
+            }
+        }
+    }
+    
     
     @objc func forgetPasswordAction() {
         

@@ -10,6 +10,12 @@ target 'ShreyanshProject' do
   pod 'AlamofireImage', '~> 4.1'
   pod 'SwiftKeychainWrapper'
 
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  
+  pod 'FBSDKLoginKit'
+    
+
 
 
   # Pods for ShreyanshProject
