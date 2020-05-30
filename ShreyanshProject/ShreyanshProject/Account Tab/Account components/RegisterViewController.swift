@@ -17,6 +17,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    
     
     let datePicker = UIDatePicker()
     
@@ -26,6 +28,8 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         emailidTextField.becomeFirstResponder()
+        
+        signUpButton.layer.cornerRadius = 5
         
         showDatePicker()
     }

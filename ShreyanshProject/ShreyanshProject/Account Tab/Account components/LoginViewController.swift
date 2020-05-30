@@ -10,15 +10,18 @@ import UIKit
 import SwiftKeychainWrapper
 import FBSDKLoginKit
 import FirebaseAuth
+import GoogleSignIn
 
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
 
     @IBOutlet weak var emailIDLoginTextField: UITextField!
     @IBOutlet weak var passwordLoginTextField: UITextField!
     @IBOutlet weak var forgetPasswordLabel: UILabel!
     @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var manualLoginButton: UIButton!
+    @IBOutlet weak var googleLoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,8 @@ class LoginViewController: UIViewController {
         forgetPasswordLabel.addGestureRecognizer(forgetPasswordLabelTap)
         
         
+        manualLoginButton.layer.cornerRadius = 5
+        
         
         if let token = AccessToken.current,
             !token.isExpired {
@@ -41,9 +46,20 @@ class LoginViewController: UIViewController {
             print("UserID: \(token.userID)")
         
         }
-        
+       
+        //Google Restore Previous SignIn
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
     }
+    
+    @IBAction func googleLoginButton(_ sender: UIButton) {
+        
+        GIDSignIn.sharedInstance()?.delegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+    
+    
     
     @IBAction func manualLoginAction(_ sender: UIButton) {
         
@@ -93,7 +109,7 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                print("Login success!")
+                print("FaceBook Login SuccessFull!")
                 
                 
             }
@@ -121,3 +137,35 @@ class LoginViewController: UIViewController {
     
 }
 
+
+
+extension LoginViewController: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if let error = error {
+            print(error)
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                let authError = error as NSError
+            }
+            else {
+                return
+            }
+            return
+        }
+        // User is signed in
+        // ...
+        
+        print("Gooogle Login SuccessFull!")
+    }
+    
+    
+}

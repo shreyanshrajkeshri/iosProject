@@ -895,6 +895,9 @@
                                                     <constraint firstAttribute="height" constant="45" id="gpk-PM-anl"/>
                                                 </constraints>
                                                 <state key="normal" image="GoogleLogin"/>
+                                                <connections>
+                                                    <action selector="googleLoginButton:" destination="Qnx-dS-Chb" eventType="touchUpInside" id="ySj-UN-aqX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -946,6 +949,8 @@
                         <outlet property="emailIDLoginTextField" destination="UJX-yf-UOW" id="52C-f6-zgF"/>
                         <outlet property="facebookLoginButton" destination="qg7-H5-AHg" id="CO6-Bh-SYx"/>
                         <outlet property="forgetPasswordLabel" destination="MZk-bs-aY9" id="lAT-EK-Gbx"/>
+                        <outlet property="googleLoginButton" destination="Hev-nZ-Ebj" id="DQE-WV-F6R"/>
+                        <outlet property="manualLoginButton" destination="EJr-LA-Opj" id="oiO-qr-awo"/>
                         <outlet property="passwordLoginTextField" destination="7Og-fp-2Vx" id="sTC-16-e5u"/>
                     </connections>
                 </viewController>
@@ -1124,6 +1129,7 @@
                         <outlet property="emailidTextField" destination="qIh-HJ-izl" id="khg-Jm-WEN"/>
                         <outlet property="fullNameTextField" destination="XpF-vu-CRl" id="d5t-uu-H8p"/>
                         <outlet property="passwordTextField" destination="RNl-B0-mRM" id="YFh-uT-zd1"/>
+                        <outlet property="signUpButton" destination="0DU-hh-98w" id="5cd-mq-djc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jii-PM-Ky2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1212,6 +1218,7 @@
                     <connections>
                         <outlet property="captchatextField" destination="fV8-S0-CWz" id="KdN-IL-2LY"/>
                         <outlet property="dateOfBirthTextField" destination="1lc-82-NS2" id="m84-WM-avZ"/>
+                        <outlet property="resetPasswordButton" destination="2c4-DM-OV0" id="2We-4y-4Hf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ua-UX-QcE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1295,6 +1302,7 @@
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="zhs-mS-Kav" id="a74-Qw-fSC"/>
                         <outlet property="passwordTextField" destination="PGM-dN-nKR" id="w8d-iM-M4B"/>
+                        <outlet property="setPasswordButton" destination="tks-yB-Meh" id="87n-bc-LHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2O-GF-MYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

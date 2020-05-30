@@ -14,11 +14,15 @@ class ResetViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var setPasswordButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        setPasswordButton.layer.cornerRadius = 5
         
     }
     

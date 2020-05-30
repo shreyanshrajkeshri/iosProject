@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-ShreyanshProject/Pods-ShreyanshProject-resources.sh
 ${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle
+${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle

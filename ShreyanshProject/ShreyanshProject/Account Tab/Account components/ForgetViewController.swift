@@ -13,6 +13,8 @@ class ForgetViewController: UIViewController {
 
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var captchatextField: UITextField!
+    @IBOutlet weak var resetPasswordButton: UIButton!
+    
     
     let datePicker = UIDatePicker()
     
@@ -22,6 +24,7 @@ class ForgetViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        resetPasswordButton.layer.cornerRadius = 5
         
         showDatePicker()
     }
