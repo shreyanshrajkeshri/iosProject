@@ -16,20 +16,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Extraction" translatesAutoresizingMaskIntoConstraints="NO" id="s0I-EF-YfR">
-                        <rect key="frame" x="5" y="5" width="190" height="90"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7W1-XK-kpo">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Extraction" translatesAutoresizingMaskIntoConstraints="NO" id="s0I-EF-YfR">
+                                <rect key="frame" x="5" y="5" width="190" height="90"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="s0I-EF-YfR" secondAttribute="trailing" constant="5" id="2hc-k0-sWR"/>
+                            <constraint firstItem="s0I-EF-YfR" firstAttribute="top" secondItem="7W1-XK-kpo" secondAttribute="top" constant="5" id="Nl8-Zf-Dfu"/>
+                            <constraint firstAttribute="bottom" secondItem="s0I-EF-YfR" secondAttribute="bottom" constant="5" id="ULq-cA-9VC"/>
+                            <constraint firstItem="s0I-EF-YfR" firstAttribute="leading" secondItem="7W1-XK-kpo" secondAttribute="leading" constant="5" id="Yzo-oe-nKR"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="s0I-EF-YfR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="9t9-Tl-w66"/>
-                <constraint firstAttribute="bottom" secondItem="s0I-EF-YfR" secondAttribute="bottom" constant="5" id="E2L-tZ-vJ6"/>
-                <constraint firstAttribute="trailing" secondItem="s0I-EF-YfR" secondAttribute="trailing" constant="5" id="cK2-2p-eC6"/>
-                <constraint firstItem="s0I-EF-YfR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="zYJ-mg-Q0Y"/>
+                <constraint firstAttribute="trailing" secondItem="7W1-XK-kpo" secondAttribute="trailing" id="Gll-gb-Oio"/>
+                <constraint firstItem="7W1-XK-kpo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="m02-Jq-B6Q"/>
+                <constraint firstAttribute="bottom" secondItem="7W1-XK-kpo" secondAttribute="bottom" id="mYz-na-ycJ"/>
+                <constraint firstItem="7W1-XK-kpo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="q7Q-dr-drj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="200" height="104"/>
             <connections>
+                <outlet property="movieDetailsContentView" destination="7W1-XK-kpo" id="lhi-zh-Ss8"/>
                 <outlet property="movieDetailsImageView" destination="s0I-EF-YfR" id="liR-Rz-bXR"/>
             </connections>
             <point key="canvasLocation" x="246.37681159420291" y="141.96428571428569"/>

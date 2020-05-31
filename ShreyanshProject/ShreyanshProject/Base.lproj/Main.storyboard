@@ -83,26 +83,29 @@
         <!--Favourite View Controller-->
         <scene sceneID="VcS-dG-yJC">
             <objects>
-                <viewController storyboardIdentifier="MyCartViewController" id="Ckk-Nc-lU2" customClass="FavouriteViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavouriteViewController" id="Ckk-Nc-lU2" customClass="FavouriteViewController" customModule="ShreyanshProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m3O-oP-Tbo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGu-Om-Owl">
-                                <rect key="frame" x="46.5" y="430" width="321" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-Zc-2pK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="yGu-Om-Owl" firstAttribute="centerX" secondItem="m3O-oP-Tbo" secondAttribute="centerX" id="VxI-4U-T8r"/>
-                            <constraint firstItem="yGu-Om-Owl" firstAttribute="centerY" secondItem="m3O-oP-Tbo" secondAttribute="centerY" id="aTl-Ro-mIs"/>
+                            <constraint firstItem="cWv-Zc-2pK" firstAttribute="top" secondItem="xDR-06-Yoa" secondAttribute="top" id="7Zp-t7-PW9"/>
+                            <constraint firstItem="xDR-06-Yoa" firstAttribute="bottom" secondItem="cWv-Zc-2pK" secondAttribute="bottom" id="ES3-VC-Ymh"/>
+                            <constraint firstItem="cWv-Zc-2pK" firstAttribute="leading" secondItem="xDR-06-Yoa" secondAttribute="leading" id="JMh-RH-7BN"/>
+                            <constraint firstItem="xDR-06-Yoa" firstAttribute="trailing" secondItem="cWv-Zc-2pK" secondAttribute="trailing" id="knw-xF-MEr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xDR-06-Yoa"/>
                     </view>
                     <navigationItem key="navigationItem" id="cmg-3l-Z7D"/>
+                    <connections>
+                        <outlet property="favouriteTableView" destination="cWv-Zc-2pK" id="4ur-G2-AZG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRd-o0-WRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,6 +550,18 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXu-Qy-KwT">
+                                                <rect key="frame" x="354" y="20" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="2p3-YI-qwc"/>
+                                                    <constraint firstAttribute="width" constant="30" id="ir1-Ph-8bl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" image="heart"/>
+                                                <connections>
+                                                    <action selector="favouriteAddAction:" destination="8nD-f7-Srf" eventType="touchUpInside" id="QVT-Pd-c9C"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -564,6 +579,8 @@
                                             <constraint firstAttribute="trailing" secondItem="6xA-y8-CDx" secondAttribute="trailing" constant="10" id="QF8-57-GYH"/>
                                             <constraint firstItem="nFf-RC-CKe" firstAttribute="leading" secondItem="rPL-te-CSi" secondAttribute="trailing" constant="20" id="SnG-Ai-i9F"/>
                                             <constraint firstItem="ngb-xy-9D8" firstAttribute="top" secondItem="3OZ-pc-CpF" secondAttribute="top" constant="20" id="T0J-45-M0D"/>
+                                            <constraint firstItem="vXu-Qy-KwT" firstAttribute="top" secondItem="3OZ-pc-CpF" secondAttribute="top" constant="20" id="Ups-zp-yWC"/>
+                                            <constraint firstAttribute="trailing" secondItem="vXu-Qy-KwT" secondAttribute="trailing" constant="30" id="c43-Jg-av5"/>
                                             <constraint firstAttribute="trailing" secondItem="cX6-tk-wmZ" secondAttribute="trailing" constant="20" id="eNA-bU-6em"/>
                                             <constraint firstItem="rPL-te-CSi" firstAttribute="leading" secondItem="Fgh-EQ-ibe" secondAttribute="trailing" constant="20" id="esG-5h-42f"/>
                                             <constraint firstItem="ojA-P3-5gt" firstAttribute="top" secondItem="3OZ-pc-CpF" secondAttribute="top" id="f0h-ts-E7f"/>
@@ -600,6 +617,7 @@
                         <viewLayoutGuide key="safeArea" id="KK1-Pw-sId"/>
                     </view>
                     <connections>
+                        <outlet property="favouriteAddButton" destination="vXu-Qy-KwT" id="LmD-hX-aio"/>
                         <outlet property="movieDescriptionLabel" destination="kmj-ix-88J" id="thS-b9-l95"/>
                         <outlet property="movieDetailsCollectionView" destination="cX6-tk-wmZ" id="2Sq-q5-5oa"/>
                         <outlet property="movieImageView" destination="ojA-P3-5gt" id="f3L-hb-eMu"/>
@@ -1317,6 +1335,7 @@
         <image name="GoogleLogin" width="427" height="73"/>
         <image name="Star" width="300" height="300"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="heart" width="512" height="512"/>
         <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="message.fill" catalog="system" width="64" height="56"/>

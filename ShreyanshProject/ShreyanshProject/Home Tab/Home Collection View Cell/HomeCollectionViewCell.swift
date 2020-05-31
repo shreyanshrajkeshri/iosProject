@@ -22,6 +22,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         outerView.layer.cornerRadius = 10
         outerView.clipsToBounds = true
+        
     }
 
 }

@@ -15,6 +15,8 @@
 		E105ECF1242A138C001E0D02 /* CountryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */; };
 		E1291D59242548A6006112E6 /* LoginAndRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1291D58242548A6006112E6 /* LoginAndRegistrationViewController.swift */; };
 		E12A8261248239250005F003 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E12A8260248239250005F003 /* GoogleService-Info.plist */; };
+		E12A8264248284100005F003 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8262248284100005F003 /* FavouriteTableViewCell.swift */; };
+		E12A8265248284100005F003 /* FavouriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12A8263248284100005F003 /* FavouriteTableViewCell.xib */; };
 		E12AB9C62436435F002F5DA1 /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12AB9C52436435F002F5DA1 /* AccountModule.swift */; };
 		E12CACDD247D78E300B7A32D /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CACDC247D78E300B7A32D /* ForgetViewController.swift */; };
 		E12CACDF247D79CE00B7A32D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CACDE247D79CE00B7A32D /* LoginViewController.swift */; };
@@ -97,6 +99,8 @@
 		E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListTableViewCell.xib; sourceTree = "<group>"; };
 		E1291D58242548A6006112E6 /* LoginAndRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegistrationViewController.swift; sourceTree = "<group>"; };
 		E12A8260248239250005F003 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E12A8262248284100005F003 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
+		E12A8263248284100005F003 /* FavouriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteTableViewCell.xib; sourceTree = "<group>"; };
 		E12AB9C52436435F002F5DA1 /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
 		E12CACDC247D78E300B7A32D /* ForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
 		E12CACDE247D79CE00B7A32D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +218,15 @@
 				E105ECEF242A138C001E0D02 /* CountryListTableViewCell.xib */,
 			);
 			path = "Country And Language";
+			sourceTree = "<group>";
+		};
+		E12A82662482844C0005F003 /* Favourite table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E12A8262248284100005F003 /* FavouriteTableViewCell.swift */,
+				E12A8263248284100005F003 /* FavouriteTableViewCell.xib */,
+			);
+			path = "Favourite table Cell";
 			sourceTree = "<group>";
 		};
 		E15325A12424ABBF004756DC = {
@@ -387,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				E19640092424B0E5009F50C3 /* FavouriteViewController.swift */,
+				E12A82662482844C0005F003 /* Favourite table Cell */,
 			);
 			path = "Favourite Tab";
 			sourceTree = "<group>";
@@ -522,6 +536,7 @@
 				E12A8261248239250005F003 /* GoogleService-Info.plist in Resources */,
 				E17EDB7024274C8E00310BC0 /* LanguageTableViewCell.xib in Resources */,
 				E1CA91972479434E0005D2FF /* MovieDetailsCollectionViewCell.xib in Resources */,
+				E12A8265248284100005F003 /* FavouriteTableViewCell.xib in Resources */,
 				E1CA9180247670510005D2FF /* HomeTableViewCell.xib in Resources */,
 				E1CA918424769D7F0005D2FF /* HomeCollectionViewCell.xib in Resources */,
 				E1CA918C2476B8530005D2FF /* ImagesSliderTableViewCell.xib in Resources */,
@@ -706,6 +721,7 @@
 				E15325AE2424ABBF004756DC /* AppDelegate.swift in Sources */,
 				E196400C2424B0F3009F50C3 /* ChatViewController.swift in Sources */,
 				E1CA919324780ED10005D2FF /* ShowDetailsViewController.swift in Sources */,
+				E12A8264248284100005F003 /* FavouriteTableViewCell.swift in Sources */,
 				E12FEC7A2481254D00F97E8A /* ResetViewController.swift in Sources */,
 				E1CA91962479434E0005D2FF /* MovieDetailsCollectionViewCell.swift in Sources */,
 				E1CA917F247670510005D2FF /* HomeTableViewCell.swift in Sources */,

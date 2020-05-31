@@ -68,7 +68,7 @@ class HomeTableViewCell: UITableViewCell {
         case 2:
             getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-09-15&primary_release_date.lte=2019-10-22&api_key=\(TMDBApiKey)", index: 1)
         case 3:
-            getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?with_genres=53&primary_release_year=2020&api_key=\(TMDBApiKey)", index: 2)
+            getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?with_genres=53&api_key=\(TMDBApiKey)", index: 2)
         case 4:
             getShowsFrom(url: "https://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=\(TMDBApiKey)", index: 3)
         case 5:

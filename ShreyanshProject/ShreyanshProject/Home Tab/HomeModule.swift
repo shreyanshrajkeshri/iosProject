@@ -48,8 +48,9 @@ struct TrendingResults: Decodable {
 
 
 
-struct Movies: Codable {
+class Movies: Codable {
     
+    let id: Int
     let posterImage: String
     let title: String
     let rating: Double
@@ -58,6 +59,7 @@ struct Movies: Codable {
     let releaseDate: String
     
     init() {
+        id = 0
         posterImage = ""
         title = ""
         rating = 0.0
@@ -66,7 +68,9 @@ struct Movies: Codable {
         releaseDate = ""
     }
     
+    
     enum CodingKeys: String, CodingKey {
+        case id
         case posterImage = "backdrop_path"
         case title
         case rating = "vote_average"
@@ -74,10 +78,19 @@ struct Movies: Codable {
         case description = "overview"
         case releaseDate = "release_date"
     }
+    
+    static func == (lhs: Movies, rhs: Movies) -> Bool {
+        if lhs.id == rhs.id {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 }
 
 
-struct MoviesResults: Decodable {
+class MoviesResults: Decodable {
     
     var page: Int
     var results: [Movies]
@@ -93,3 +106,32 @@ struct MoviesResults: Decodable {
     }
 }
 
+
+
+extension Array where Element == Movies {
+    
+    func persist(using key: String) {
+        
+        do {
+            let encodedShow = try JSONEncoder().encode(self)
+            UserDefaults.standard.set(encodedShow, forKey: key)
+        } catch {
+            // in case of something wrong happened
+            print(error.localizedDescription)
+        }
+    }
+    
+    
+    static func fetch(using key: String) -> [Movies]? {
+        
+        do {
+            guard let persistedShowes = UserDefaults.standard.value(forKey: key) as? Data else { return nil }
+            let decodedShowes = try JSONDecoder().decode([Movies].self, from: persistedShowes)
+            return decodedShowes
+        } catch {
+            // in case of something wrong happened
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+}

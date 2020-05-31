@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
     }
     
     
+    // Here hit the API for the which cell is visiable
     func updateDataInVisibleCell() {
         
         for cell in homeTableView.visibleCells {
@@ -139,6 +140,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    
+    //this is called when we scroll the table view
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         updateDataInVisibleCell()
@@ -150,8 +153,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
+//MARK:- CellDelegate
+
+//this help to present showDetailsViewController when we click the movie inside section of tableview
 
 extension HomeViewController: CellDelegate {
+    
     func colCategorySelected(_ indexPath: IndexPath, _ movieClickDetails: [Movies]) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
