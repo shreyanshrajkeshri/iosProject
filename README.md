@@ -1,7 +1,7 @@
 # Shreyansh's iOS Project
 
 
-# Screen Show
+# Screen Shot
 
 
 
