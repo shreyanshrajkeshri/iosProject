@@ -16,6 +16,17 @@ struct ProfileDetails {
     let dateOfBirth: String
 }
 
+enum LoginMode {
+    case manual
+    case facebook
+    case google
+    case none
+}
+
+var loginMode: LoginMode = .none
+var googleUserName = ""
+var facebookUserName = ""
+
 
 
 func isValidEmail(_ email: String) -> Bool {

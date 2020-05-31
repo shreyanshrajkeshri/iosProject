@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import FirebaseAuth
 
 class AccountViewController: UIViewController {
 
@@ -39,9 +40,7 @@ class AccountViewController: UIViewController {
     var flagImage: UIImage = #imageLiteral(resourceName: "NotFound")
     
     var languageName: String = "HINDI"
-
-
-     
+ 
     
     //MARK: View Did Load
     override func viewDidLoad() {
@@ -159,17 +158,31 @@ class AccountViewController: UIViewController {
     
     @objc func userLoginSuccessFullyAction() {
         
+        print("userLoginSuccessFullyAction")
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(userLogout))
         
         joinStackContentView.isHidden = true
         fullNameLabel.isHidden = false
         
-        if let retrievedName: String = KeychainWrapper.standard.string(forKey: "userName") {
-            fullNameLabel.text = retrievedName
+        
+        if loginMode == .manual {
+            
+            if let retrievedName: String = KeychainWrapper.standard.string(forKey: "userName") {
+                fullNameLabel.text = retrievedName
+            }
         }
         
-
+        else if loginMode == .facebook {
+            fullNameLabel.text = facebookUserName
+            
+        }
         
+        else if loginMode == .google {
+            fullNameLabel.text = googleUserName
+        }
+        
+   
         
     }
     
@@ -180,6 +193,7 @@ class AccountViewController: UIViewController {
         
         joinStackContentView.isHidden = false
         fullNameLabel.isHidden = true
+        
 
     }
    

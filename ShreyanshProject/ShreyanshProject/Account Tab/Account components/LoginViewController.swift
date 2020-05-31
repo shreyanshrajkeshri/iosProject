@@ -23,6 +23,9 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var manualLoginButton: UIButton!
     @IBOutlet weak var googleLoginButton: UIButton!
     
+    
+    let nc = NotificationCenter.default
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,7 +76,6 @@ class LoginViewController: UIViewController{
             
             self.dismiss(animated: true, completion: nil)
             
-            let nc = NotificationCenter.default
             nc.post(name: Notification.Name("UserLoginSuccessFully"), object: nil)
             
         }
@@ -99,7 +101,9 @@ class LoginViewController: UIViewController{
             }
             
             print(accessToken)
-            
+            self.dismiss(animated: true, completion: nil)
+            self.nc.post(name: Notification.Name("UserLoginSuccessFully"), object: nil)
+                        
             let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
             
             Auth.auth().signIn(with: credential) { (authResult, error) in
@@ -110,7 +114,7 @@ class LoginViewController: UIViewController{
                 }
                 
                 print("FaceBook Login SuccessFull!")
-                
+                loginMode = .facebook
                 
             }
         }
@@ -165,6 +169,16 @@ extension LoginViewController: GIDSignInDelegate {
         // ...
         
         print("Gooogle Login SuccessFull!")
+        
+        if let userName = user.profile.givenName {
+            googleUserName =  userName
+            
+        }
+        
+        loginMode = .google
+        
+        self.dismiss(animated: true, completion: nil)
+        nc.post(name: Notification.Name("UserLoginSuccessFully"), object: nil)
     }
     
     
