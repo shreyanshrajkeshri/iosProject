@@ -41,6 +41,20 @@ class HomeViewController: UIViewController {
         updateDataInVisibleCell()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setupTheme()
+        
+    }
+    
+    func setupTheme() {
+        view.backgroundColor = Theme.color(type: .backgroundColor)
+        homeTableView.backgroundColor = Theme.color(type: .backgroundColor)
+        
+    }
+    
+    
     
     // Here hit the API for the which cell is visiable
     func updateDataInVisibleCell() {

@@ -40,6 +40,17 @@ class LoginAndRegistrationViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setupTheme()
+        
+    }
+    
+    func setupTheme() {
+        view.backgroundColor = Theme.color(type: .backgroundColor)
+    }
+    
     
     @objc func ForgetPasswordAction() {
         

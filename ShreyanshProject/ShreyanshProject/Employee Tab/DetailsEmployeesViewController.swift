@@ -43,6 +43,19 @@ class DetailsEmployeesViewController: UIViewController {
         print("Details viewDidAppear")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setupTheme()
+        
+    }
+    
+    func setupTheme() {
+        view.backgroundColor = Theme.color(type: .backgroundColor)
+        detailsTableView.backgroundColor = Theme.color(type: .backgroundColor)
+    }
+    
+    
     
     func getEmployeeData(completionHandler: @escaping () -> ()) {
         let request = AF.request("http://dummy.restapiexample.com/api/v1/employees")

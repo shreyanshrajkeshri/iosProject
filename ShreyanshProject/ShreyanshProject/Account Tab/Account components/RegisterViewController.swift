@@ -18,6 +18,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet var signupView: UIView!
     
     
     let datePicker = UIDatePicker()
@@ -32,6 +33,18 @@ class RegisterViewController: UIViewController {
         signUpButton.layer.cornerRadius = 5
         
         showDatePicker()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setupTheme()
+        
+    }
+    
+    func setupTheme() {
+        view.backgroundColor = Theme.color(type: .backgroundColor)
+        signupView.backgroundColor = Theme.color(type: .backgroundColor)
     }
     
     

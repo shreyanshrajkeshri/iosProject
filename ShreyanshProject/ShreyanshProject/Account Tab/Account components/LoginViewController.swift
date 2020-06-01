@@ -22,6 +22,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var manualLoginButton: UIButton!
     @IBOutlet weak var googleLoginButton: UIButton!
+    @IBOutlet weak var loginView: UIView!
     
     
     let nc = NotificationCenter.default
@@ -118,6 +119,18 @@ class LoginViewController: UIViewController{
                 
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setupTheme()
+        
+    }
+    
+    func setupTheme() {
+        view.backgroundColor = Theme.color(type: .backgroundColor)
+        loginView.backgroundColor = Theme.color(type: .backgroundColor)
     }
     
     

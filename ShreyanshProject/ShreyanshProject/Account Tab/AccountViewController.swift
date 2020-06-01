@@ -23,7 +23,7 @@ class AccountViewController: UIViewController {
     
     
     //make nested array of string Type
-    let accountLabelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Shipping & Returns"] ]
+    let accountLabelArray = [ ["Track Order", "Size Chart", "Notifications", "Store Location"], ["Country", "Language", "About Us", "FAQ", "Change Theme"] ]
     
     /* 1. Make nested array of image type this is help to use as much as image      we want to show in particular section.
        2. Use "Image Literal" to store the image which is available in Assets file  */
@@ -94,6 +94,13 @@ class AccountViewController: UIViewController {
         super.viewWillAppear(animated)
         
         accountTableView.reloadData()
+        setupTheme()
+    }
+    
+    func setupTheme() {
+        view.backgroundColor = Theme.color(type: .backgroundColor)
+        accountTableView.backgroundColor = Theme.color(type: .backgroundColor)
+    
     }
     
 
@@ -317,6 +324,13 @@ extension AccountViewController: UITableViewDataSource, UITableViewDelegate {
         else if indexPath.section == 0 && indexPath.row == 3 {
             
             let vc = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+            
+        else if indexPath.section == 1 && indexPath.row == 4 {
+            
+            let vc = storyboard.instantiateViewController(withIdentifier: "ThemeViewController") as! ThemeViewController
             
             self.navigationController?.pushViewController(vc, animated: true)
         }

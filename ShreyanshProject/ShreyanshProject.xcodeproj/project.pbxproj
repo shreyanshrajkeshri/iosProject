@@ -43,6 +43,9 @@
 		E19640112424B1A2009F50C3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19640102424B1A2009F50C3 /* MainTabBarController.swift */; };
 		E19640142424E7BF009F50C3 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19640122424E7BF009F50C3 /* AccountTableViewCell.swift */; };
 		E19640152424E7BF009F50C3 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E19640132424E7BF009F50C3 /* AccountTableViewCell.xib */; };
+		E1A9AFA22484EE1900EEC0F7 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9AFA12484EE1900EEC0F7 /* ThemeViewController.swift */; };
+		E1A9AFA42484EE3100EEC0F7 /* BackgroundColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9AFA32484EE3100EEC0F7 /* BackgroundColorViewController.swift */; };
+		E1A9AFA62484F26800EEC0F7 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9AFA52484F26800EEC0F7 /* Theme.swift */; };
 		E1C840A6247273AC0029DB7A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840A5247273AC0029DB7A /* MapViewController.swift */; };
 		E1C840A924729BDE0029DB7A /* ListedEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840A824729BDE0029DB7A /* ListedEmployeesViewController.swift */; };
 		E1C840AB24729BFB0029DB7A /* DetailsEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C840AA24729BFB0029DB7A /* DetailsEmployeesViewController.swift */; };
@@ -133,6 +136,9 @@
 		E19640102424B1A2009F50C3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E19640122424E7BF009F50C3 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		E19640132424E7BF009F50C3 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		E1A9AFA12484EE1900EEC0F7 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		E1A9AFA32484EE3100EEC0F7 /* BackgroundColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorViewController.swift; sourceTree = "<group>"; };
+		E1A9AFA52484F26800EEC0F7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E1C840A5247273AC0029DB7A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E1C840A824729BDE0029DB7A /* ListedEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedEmployeesViewController.swift; sourceTree = "<group>"; };
 		E1C840AA24729BFB0029DB7A /* DetailsEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEmployeesViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +274,7 @@
 				E15325B82424ABC1004756DC /* LaunchScreen.storyboard */,
 				E12A8260248239250005F003 /* GoogleService-Info.plist */,
 				E15325BB2424ABC1004756DC /* Info.plist */,
+				E1A9AFA52484F26800EEC0F7 /* Theme.swift */,
 			);
 			path = ShreyanshProject;
 			sourceTree = "<group>";
@@ -319,6 +326,8 @@
 				E12CACE0247D79E700B7A32D /* RegisterViewController.swift */,
 				E12CACE2247E854B00B7A32D /* LoginModel.swift */,
 				E12FEC792481254D00F97E8A /* ResetViewController.swift */,
+				E1A9AFA12484EE1900EEC0F7 /* ThemeViewController.swift */,
+				E1A9AFA32484EE3100EEC0F7 /* BackgroundColorViewController.swift */,
 			);
 			path = "Account components";
 			sourceTree = "<group>";
@@ -725,11 +734,14 @@
 				E12FEC7A2481254D00F97E8A /* ResetViewController.swift in Sources */,
 				E1CA91962479434E0005D2FF /* MovieDetailsCollectionViewCell.swift in Sources */,
 				E1CA917F247670510005D2FF /* HomeTableViewCell.swift in Sources */,
+				E1A9AFA22484EE1900EEC0F7 /* ThemeViewController.swift in Sources */,
 				E1CA918B2476B8530005D2FF /* ImagesSliderTableViewCell.swift in Sources */,
 				E17EDB6B24274AAC00310BC0 /* CountryTableViewCell.swift in Sources */,
 				E1C840AD2472AFD80029DB7A /* EmployeesModule.swift in Sources */,
 				E15325B02424ABBF004756DC /* SceneDelegate.swift in Sources */,
+				E1A9AFA42484EE3100EEC0F7 /* BackgroundColorViewController.swift in Sources */,
 				E12CACE3247E854B00B7A32D /* LoginModel.swift in Sources */,
+				E1A9AFA62484F26800EEC0F7 /* Theme.swift in Sources */,
 				E105ECE4242A0922001E0D02 /* CountryAndLanguageViewController.swift in Sources */,
 				E1C840B12473B95C0029DB7A /* ListedTableViewCell.swift in Sources */,
 				E196400A2424B0E5009F50C3 /* FavouriteViewController.swift in Sources */,
